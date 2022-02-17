@@ -1,1 +1,224 @@
-8888888
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <!-- 引入样式 -->
+    <!-- <link rel="stylesheet" href="element.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <!-- 必须先引入vue再引入element.js -->
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        .el-aside{
+            background: #ffeeee;
+            height: 500px;
+        }
+        .el-main{
+            background: pink;
+            height: 500px;
+        }
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <iframe></iframe> 对象代表一个 HTML 框架 -->
+    <div id="app">
+        <el-header>
+            <el-tooltip class="item" effect="dark" content="打开全屏" placement="top" v-show="show">
+                <el-button @click="signOut">全屏</el-button>
+            </el-tooltip>
+            <el-tooltip class="item" effect="dark" content="退出全屏" placement="top" v-show="!show">
+                <el-button @click="exitFullscreen">退出全屏</el-button>
+            </el-tooltip>
+        </el-header>
+        <el-container>
+            <el-aside width="200px">
+                <el-menu
+                router
+                default-active="2"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose">
+                    <el-submenu index="1">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span>导航一</span>
+                        </template>
+                        <el-submenu index="1-1">
+                            <template slot="title">菜单</template>
+                            <el-menu-item index="1-1-1" >选项1</el-menu-item>
+                            <el-menu-item index="1-1-2">选项2</el-menu-item>
+                        </el-submenu>
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+            <el-main>
+                <ol>
+                    <todo-item v-for="item in groceryList" :key="item.id" :todo="item"></todo-item>
+                </ol>
+                <!-- <iframe :src="url"></iframe> -->
+                <li v-for="n in evenNumbers">{{ n }}</li>
+                <!-- 多个复选框 -->
+                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="john" value="John" v-model="checkedNames">
+                <label for="john">John</label>
+                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+                <label for="mike">Mike</label>
+                <br>
+                <span>Checked names: {{ checkedNames }}</span>
+
+
+                <!-- 单选框 -->
+                <br>
+                <input type="radio" id="one" value="One" v-model="picked">
+                <label for="one">One</label>
+                <br>
+                <input type="radio" id="two" value="Two" v-model="picked">
+                <label for="two">Two</label>
+                <br>
+                <span>Picked: {{ picked }}</span>
+                <br>
+                <select v-model="selected" multiple style="width: 50px;">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <br>
+                <span>Selected: {{ selected }}</span>
+                <br>
+                <div id="components-demo">
+                    <button-counter>
+                        <slot></slot>
+                    </button-counter>
+                </div>
+                <el-dropdown @command="handleCommand">
+                    <span class="el-dropdown-link">
+                        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+                    </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="a">黄金糕</el-dropdown-item>
+                        <el-dropdown-item command="b">狮子头</el-dropdown-item>
+                        <el-dropdown-item command="c">螺蛳粉</el-dropdown-item>
+                        <el-dropdown-item command="d" disabled>双皮奶</el-dropdown-item>
+                        <el-dropdown-item command="e" divided>蚵仔煎</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+                <br>
+                <!-- 过度 transition -->
+                <button @click="shows = !shows">
+                    Toggle
+                </button>
+                <transition name="fade">
+                <p v-if="shows">hello</p>
+                </transition>
+                <br>
+                <div>{{ message | capitalize }}</div>
+            </el-main>
+        </el-container>
+    </div>
+    <script>
+        // 定义名为 todo-item 的新组件
+        Vue.component('todo-item', {
+            props:['todo'],//父作用域将数据传到子组件
+            template: '<li>{{todo.text}}</li>',
+        })
+
+
+        Vue.component('button-counter', {
+            data: function () {
+                return {
+                counts: 0
+                }
+            },
+            template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+        })
+        var vm = new Vue({
+            el:"#app",
+            data(){
+                return{
+                    message:"pbsdf",
+                    url:'',
+                    show:true,
+                    shows:true,
+                    groceryList: [
+                        { id: 0, text: '蔬菜' },
+                        { id: 1, text: '奶酪' },
+                        { id: 2, text: '随便其它什么人吃的东西' }
+                    ],
+                    numbers: [ 1, 2, 3, 4, 5 ],
+                    checkedNames:[],
+                    picked: '',
+                    selected: [],
+                    counts:0
+                }
+            },
+            computed: {
+                evenNumbers: function () {
+                    return this.numbers.filter(function (number) {
+                        return number % 2 === 0
+                    })
+                },
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.toUpperCase()
+                }
+            },
+            methods:{
+                handleCommand(command) {
+                    console.log(command);
+                },
+                handleOpen(key, keyPath) {
+                    if(key == '1-1'){
+                        this.url = 'echarts.html'
+                    }
+                },
+                handleClose(key, keyPath) {
+                    console.log(key, keyPath);
+                },
+                //全屏
+                signOut(){
+                    let ele = document.documentElement;
+                    if (ele.requestFullscreen) {
+                        ele.requestFullscreen();
+                        } else if (ele.mozRequestFullScreen) {
+                            ele.mozRequestFullScreen();
+                        } else if (ele.webkitRequestFullscreen) {
+                            ele.webkitRequestFullscreen();
+                        } else if (ele.msRequestFullscreen) {
+                            ele.msRequestFullscreen();
+                    }
+                    this.show = !this.show;
+                },
+                //退出全屏
+                exitFullscreen(){
+                    if(document.exitFullScreen) {
+                        document.exitFullScreen();
+                    } else if(document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if(document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if(document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    this.show = !this.show;
+                }
+            }
+        });
+        console.log(vm.data.a)
+        console.log(data.a)
+    </script>
+</body>
+</html>
