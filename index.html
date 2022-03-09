@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu</title>
+    <title>个人博客</title>
     <!-- 引入样式 -->
     <!-- <link rel="stylesheet" href="element.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -19,24 +19,38 @@
     <!-- <iframe></iframe> 对象代表一个 HTML 框架 -->
     <div id="app">
         <el-header style="height: 45px;padding: 0;">
-            <el-tooltip class="item" effect="dark" content="打开全屏" placement="top" v-show="show">
-                <el-button @click="signOut" style="float: right;">全屏</el-button>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="退出全屏" placement="top" v-show="!show">
-                <el-button @click="exitFullscreen" style="float: right;">退出全屏</el-button>
-            </el-tooltip>
+            <el-row :gutter="20" style="height: 100%;">
+                <el-col :span="6" class="navigation">
+                    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect" style="height: 45px;">
+                        <el-menu-item index="1">相册</el-menu-item>
+                        <el-menu-item index="2">消息中心</el-menu-item>
+                    </el-menu>
+                </el-col>
+                <el-col :span="6"><div class="grid-content bg-purple">2</div></el-col>
+                <el-col :span="6"><div class="grid-content bg-purple">3</div></el-col>
+                <el-col :span="6">
+                    <el-tooltip effect="dark" content="打开全屏" placement="top" v-show="show">
+                        <el-button @click="signOut" style="float: right;">全屏</el-button>
+                    </el-tooltip>
+                    <el-tooltip effect="dark" content="退出全屏" placement="top" v-show="!show">
+                        <el-button @click="exitFullscreen" style="float: right;">退出全屏</el-button>
+                    </el-tooltip>
+                </el-col>
+            </el-row>
+            
         </el-header>
         <el-container>
             <el-aside width="225px">
                 <div class="canvasContainer">  
                     <h3>公告</h3>  
                     <canvas id="clock" width="200" height="200"></canvas>  
-                    <canvas id="canvas" width="200" height="150"></canvas> 
-                    <div>邮箱：<span>635418133@qq.com</span></div>
+                    <canvas id="canvas" width="200" height="150"></canvas>
                 </div> 
+                <div>邮箱：<span>635418133@qq.com</span></div>
             </el-aside>
             <el-main>
-                
+                <div v-show="activeIndex==1">1</div>
+                <div v-show="activeIndex==2">2</div>
             </el-main>
         </el-container>
     </div>
@@ -46,13 +60,16 @@
             data(){
                 return{
                     show:true,
+                    activeIndex: '1',
                 }
             },
             mounted(){
                this.getCanvas();
             },
             methods:{
-               
+                handleSelect(key, keyPath) {
+                    this.activeIndex = key;
+                },
                 //全屏
                 signOut(){
                     let ele = document.documentElement;

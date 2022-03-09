@@ -1,10 +1,22 @@
-.el-aside{
-    background: #ffeeee;
-    height: 500px;
+html,body,#app {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 16px;
+    background:#F2F6FC;
+    height: 100%;
+    overflow: hidden;
 }
-.el-main{
-    background: pink;
-    height: 500px;
+.navigation {
+    height: 100%;
+}
+.el-menu-item {
+    height: 100% !important;
+    line-height:45px !important;
+}
+.el-menu--horizontal > .el-menu-item {
+    border-bottom:none;
+}
+.el-menu--horizontal > .el-menu-item.is-active {
+    border-bottom:none;
 }
 .canvasContainer {  
     width: 200px;  
@@ -18,7 +30,6 @@
     border-radius: 5px;  
     padding: 10px;  
 }  
-
 .canvasContainer h3 {  
     width: 100%;  
     font-weight: normal;  
@@ -26,3 +37,16 @@
     border-bottom: 1px solid #ddd;  
     padding-bottom: 5px;  
 } 
+.el-container {
+    height: calc(100% - 60px);
+}
+.el-aside{
+    background: #ffeeee;
+    height: 500px;
+    height:100%;
+}
+.el-main{
+    background: pink;
+    height: 500px;
+    height:100%;
+}
