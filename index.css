@@ -1,0 +1,28 @@
+.el-aside{
+    background: #ffeeee;
+    height: 500px;
+}
+.el-main{
+    background: pink;
+    height: 500px;
+}
+.canvasContainer {  
+    width: 200px;  
+    height: 400px;  
+    display: flex;  
+    flex-direction: column;  
+    margin: auto;  
+    align-items: center;  
+    justify-content: center;  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    padding: 10px;  
+}  
+
+.canvasContainer h3 {  
+    width: 100%;  
+    font-weight: normal;  
+    text-align: center;  
+    border-bottom: 1px solid #ddd;  
+    padding-bottom: 5px;  
+} 
