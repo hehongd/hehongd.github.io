@@ -48,8 +48,64 @@ html,body,#app {
     height: 500px;
     height:100%;
 }
-.el-main{
-    background: pink;
+.center .el-main{
+    /* background: pink; */
     height: 500px;
     height:100%;
+    padding: 20px 20px 0 20px;
+}
+.routerClass {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.contanier {
+    width: 100%;
+    height: 100%;
+}
+.flex-h {
+    display: flex;
+    height:calc(100vh - 140px)
+}
+.el-menu-vertical-demo {
+    background: #304156;
+}
+.el-menu-vertical-demo .el-submenu__title {
+    color: #FFF;
+}
+.el-submenu__title:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+.el-submenu .el-menu {
+    border: none;
+    background: rgb(48,65,86);
+    color: #FFF;
+}
+.el-submenu .el-menu-item {
+    color: #FFF;
+}
+.el-menu-item:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* 设置了默认左边框为白色 */
+.el-menu-vertical-demo .el-menu-item{
+    border-left:#fff solid rgba(0,0,0,0.5);
+}
+/* 设置鼠标悬停时el-menu-item的样式 */
+.el-menu-vertical-demo .el-menu-item:hover{
+    border-left:#33A2EF solid rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
+    color: #38B2FF;
+    /* //less语法，实现鼠标悬停时icon变色 */
+    /* i {
+        color: #38B2FF;
+    } */
+}
+  /* 设置选中el-menu-item时的样式 */
+  .el-menu-vertical-demo .el-menu-item.is-active {
+    border-left:#33A2EF solid rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
+    color: #38B2FF;
 }
