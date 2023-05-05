@@ -11,22 +11,25 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- <link rel="stylesheet" href="./src/css/element.css" /> -->
     <link rel="stylesheet" type="text/css" href="./src/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="./src/css/one.css" />
     <link rel="stylesheet" href="./src/css/takedown.css">
     <!-- 引入组件库 -->
     <!-- 必须先引入vue再引入element.js -->
     <script  src="./src/utils/vue.js"></script>
     <!-- <script  src="./src/utils/element.js"></script> -->
+    <script src="https://unpkg.com/http-vue-loader"></script>
     <script src="./src/utils/jQuery.js"></script>
     
     <!-- 引入组件库 -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://unpkg.com/vue-router@3.0.0/dist/vue-router.js"></script>
+    <script src="./src/js/clipboard.min.js"></script>
     
 </head>
 <body>
     <!-- <iframe></iframe> 对象代表一个 HTML 框架 -->
     <div id="app" v-cloak>
+        <!-- <button id="but" >点击复制</button> -->
+
         <el-header style="height: 45px;padding: 0;">
             <el-row :gutter="20" style="height: 100%;">
                 <el-col :span="6" class="navigation">
@@ -68,7 +71,7 @@
                         <el-menu 
                         router 
                         class="el-menu-vertical-demo" 
-                        :default-active="'one'"
+                        :default-active='defaultActive'
                         @open="handleOpen" 
                         @close="handleClose" 
                         :collapse="isCollapse" >
@@ -78,8 +81,8 @@
                                 <span slot="title">VUE3</span>
                             </template>
                             <el-menu-item-group>
-                                <el-menu-item index="one">Mixin组件复用</el-menu-item>
-                                <el-menu-item index="two">选项2</el-menu-item>
+                                <el-menu-item index="/one">Mixin组件复用</el-menu-item>
+                                <el-menu-item index="/two">选项2</el-menu-item>
                             </el-menu-item-group>
                             </el-submenu>
                         </el-menu>
@@ -94,15 +97,25 @@
         </el-container>
     </div>
     <script type="module">
-        // 1. 定义（路由）组件。
-        import one from './src/pages/one.js'
-        import two from '/src/pages/two.js'
+        //  var clipboard = new ClipboardJS('#but', {
+        //     text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+        //     return '测试复制';
+        //     }
+        // });
+        // clipboard.on('success', function(e) {
+        //     alert("复制成功");
+        // });
+        
+        // clipboard.on('error', function(e) {
+        //     alert("复制失败");
+        // });
+        
         // 2. 定义路由
         // 每个路由应该映射一个组件。 其中"component" 可以是 通过 Vue.extend()
         //  创建的组件构造器， 或者，只是一个组件配置对象.
         const routes = [
-            { path: '/one', component:one},
-            { path: '/two', component:two}
+            { path: '/one', component:httpVueLoader('./src/pages/one.vue')},
+            { path: '/two', component:httpVueLoader('./src/pages/two.vue')}
         ]
 
         // 3. 创建 router 实例，然后传 `routes` 配置
@@ -111,18 +124,41 @@
         })
         var vm = new Vue({
             el:"#app",
+            // components: {
+            //     'one': httpVueLoader('./src/pages/one.vue')
+            // },
+
             data(){
                 return{
                     show:true,
                     activeIndex: '1',
                     isCollapse: false,
+                    defaultActive:'/one'
+                }
+            },
+            watch: {
+                $route: {
+                    immediate: true,
+                    handler(to) {
+                        if (to.fullPath)
+                        this.defaultActive = to.path // 给defaultActive重新赋值为当前组件的路由地址
+                    }
                 }
             },
             mounted(){
                this.getCanvas();
-               this.getFlowers();
+               this.getFlowers();  
             },
             methods:{
+                jsCopy(){
+                    console.log(99)
+                    var e=document.getElementById("contents");//对象是contents
+                    e.select(); //选择对象
+                    let tag=document.execCommand("Copy","false",null); //执行浏览器复制命令
+                    if(tag){
+                        alert('复制内容成功');
+                    }
+                },
                 handleOpen(key, keyPath) {
                     console.log(key, keyPath);
                 },
