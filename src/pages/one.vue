@@ -260,300 +260,335 @@
     </div>
 </template>
 <script>
-// 复制
-copy()
-function copy() {
-    let codeValue = ""
-    setTimeout(() => {
-            codeValue = document.getElementsByClassName('code')[0].innerHTML
-            document.getElementById("but").style.display="none";
-            if(document.getElementsByClassName('preClass').length> 0){
-                document.getElementsByClassName('preClass')[0].onmouseenter = function (){
-                    document.getElementById("but").style.display="inline";
-                }
-                document.getElementsByClassName('preClass')[0].onmouseleave  = function (){
-                    document.getElementById("but").style.display="none";
-                }
-                document.getElementsByClassName('copyClass')[0].onmouseenter = function (){
-                    document.getElementById("but").style.display="inline";
-                }
+// http-vue-loader的示例中，单文件子组件中写的是module.exports = {}，而不是export default {}
+	module.exports = {
+		// 一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝
+	    data: function() {
+	        return {
+	            clipboard:null,
+	            clipboard1:null,
+	            clipboard2:null,
+	            clipboard3:null,
+	            clipboard4:null,
+	            clipboard5:null,
+	            clipboard6:null,
+	            clipboard7:null,
+	            clipboard8:null,
+	        }
+	    },
+        mounted(){
+            this.copy()
+        },
+		methods:{
+            copy() {
+                let _that = this
+                document.getElementById("but").style.display="none";
+                document.getElementById("but1").style.display="none";
+                document.getElementById("but2").style.display="none";
+                document.getElementById("but3").style.display="none";
+                document.getElementById("but4").style.display="none";
+                document.getElementById("but5").style.display="none";
+                document.getElementById("but6").style.display="none";
+                document.getElementById("but7").style.display="none";
+                document.getElementById("but8").style.display="none";
+                setTimeout(() => {
+                        codeValue = document.getElementsByClassName('code')[0].innerHTML
+                        
+                        if(document.getElementsByClassName('preClass').length> 0){
+                            document.getElementsByClassName('preClass')[0].onmouseenter = function (){
+                                document.getElementById("but").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass')[0].onmouseleave  = function (){
+                                document.getElementById("but").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass')[0].onmouseenter = function (){
+                                document.getElementById("but").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass1').length> 0){
+                            document.getElementsByClassName('preClass1')[0].onmouseenter = function (){
+                                document.getElementById("but1").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass1')[0].onmouseleave  = function (){
+                                document.getElementById("but1").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass1')[0].onmouseenter = function (){
+                                document.getElementById("but1").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass2').length> 0){
+                            document.getElementsByClassName('preClass2')[0].onmouseenter = function (){
+                                document.getElementById("but2").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass2')[0].onmouseleave  = function (){
+                                document.getElementById("but2").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass2')[0].onmouseenter = function (){
+                                document.getElementById("but2").style.display="inline";
+                            }
+                        }
+
+
+                        if(document.getElementsByClassName('preClass3').length> 0){
+                            document.getElementsByClassName('preClass3')[0].onmouseenter = function (){
+                                document.getElementById("but3").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass3')[0].onmouseleave  = function (){
+                                document.getElementById("but3").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass3')[0].onmouseenter = function (){
+                                document.getElementById("but3").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass4').length> 0){
+                            document.getElementsByClassName('preClass4')[0].onmouseenter = function (){
+                                document.getElementById("but4").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass4')[0].onmouseleave  = function (){
+                                document.getElementById("but4").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass4')[0].onmouseenter = function (){
+                                document.getElementById("but4").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass5').length> 0){
+                            document.getElementsByClassName('preClass5')[0].onmouseenter = function (){
+                                document.getElementById("but5").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass5')[0].onmouseleave  = function (){
+                                document.getElementById("but5").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass5')[0].onmouseenter = function (){
+                                document.getElementById("but5").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass6').length> 0){
+                            document.getElementsByClassName('preClass6')[0].onmouseenter = function (){
+                                document.getElementById("but6").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass6')[0].onmouseleave  = function (){
+                                document.getElementById("but6").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass6')[0].onmouseenter = function (){
+                                document.getElementById("but6").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass7').length> 0){
+                            document.getElementsByClassName('preClass7')[0].onmouseenter = function (){
+                                document.getElementById("but7").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass7')[0].onmouseleave  = function (){
+                                document.getElementById("but7").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass7')[0].onmouseenter = function (){
+                                document.getElementById("but7").style.display="inline";
+                            }
+                        }
+
+                        if(document.getElementsByClassName('preClass8').length> 0){
+                            document.getElementsByClassName('preClass8')[0].onmouseenter = function (){
+                                document.getElementById("but8").style.display="inline";
+                            }
+                            document.getElementsByClassName('preClass8')[0].onmouseleave  = function (){
+                                document.getElementById("but8").style.display="none";
+                            }
+                            document.getElementsByClassName('copyClass8')[0].onmouseenter = function (){
+                                document.getElementById("but8").style.display="inline";
+                            }
+                        }
+                },300)
+
+                _that.clipboard = new ClipboardJS('#but', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    codeValue = document.getElementsByClassName('code')[0].innerHTML
+                    return _that.filter(codeValue);
+                    }
+                });
+                _that.clipboard.on('success', function(e) {
+                    console.log(e)
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                
+                _that.clipboard.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard1 = new ClipboardJS('#but1', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue1 = document.getElementsByClassName('code1')[0].innerHTML
+                    
+                    return _that.filter(codeValue1);
+                    }
+                });
+                _that.clipboard1.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard1.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard2 = new ClipboardJS('#but2', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue2 = document.getElementsByClassName('code2')[0].innerHTML
+                    
+                    return _that.filter(codeValue2);
+                    }
+                });
+                _that.clipboard2.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard2.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard3 = new ClipboardJS('#but3', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue3 = document.getElementsByClassName('code3')[0].innerHTML
+                    
+                    return _that.filter(codeValue3);
+                    }
+                });
+                _that.clipboard3.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard3.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard4 = new ClipboardJS('#but4', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue4 = document.getElementsByClassName('code4')[0].innerHTML
+                    
+                    return _that.filter(codeValue4);
+                    }
+                });
+                _that.clipboard4.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard4.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard5 = new ClipboardJS('#but5', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue5 = document.getElementsByClassName('code5')[0].innerHTML
+                    
+                    return _that.filter(codeValue5);
+                    }
+                });
+                _that.clipboard5.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard5.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard6 = new ClipboardJS('#but6', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue6 = document.getElementsByClassName('code6')[0].innerHTML
+                    
+                    return _that.filter(codeValue6);
+                    }
+                });
+                _that.clipboard6.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard6.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard7 = new ClipboardJS('#but7', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue7 = document.getElementsByClassName('code7')[0].innerHTML
+                    
+                    return _that.filter(codeValue7);
+                    }
+                });
+                _that.clipboard7.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard7.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard8 = new ClipboardJS('#but8', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue8 = document.getElementsByClassName('code8')[0].innerHTML
+                    
+                    return _that.filter(codeValue8);
+                    }
+                });
+                _that.clipboard8.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard8.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+            },
+            escape2Html(str) {
+                var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+                return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){
+                    return arrEntities[t];
+                });
+            },
+            //过滤html标签
+            filter(html) {
+                return html
+                    .replace(/<(?:.|\n)*?>/gm, '')
+                    .replace(/(&rdquo;)/g, '"')
+                    .replace(/&ldquo;/g, '"')
+                    .replace(/&mdash;/g, '-')
+                    .replace(/&nbsp;/g, '')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&lt;/g, '<')
+                    // .replace(/<[\w\s"':=\/]*/, '')
             }
-
-            document.getElementById("but1").style.display="none";
-            if(document.getElementsByClassName('preClass1').length> 0){
-                document.getElementsByClassName('preClass1')[0].onmouseenter = function (){
-                    document.getElementById("but1").style.display="inline";
-                }
-                document.getElementsByClassName('preClass1')[0].onmouseleave  = function (){
-                    document.getElementById("but1").style.display="none";
-                }
-                document.getElementsByClassName('copyClass1')[0].onmouseenter = function (){
-                    document.getElementById("but1").style.display="inline";
-                }
-            }
-
-            document.getElementById("but2").style.display="none";
-            if(document.getElementsByClassName('preClass2').length> 0){
-                document.getElementsByClassName('preClass2')[0].onmouseenter = function (){
-                    document.getElementById("but2").style.display="inline";
-                }
-                document.getElementsByClassName('preClass2')[0].onmouseleave  = function (){
-                    document.getElementById("but2").style.display="none";
-                }
-                document.getElementsByClassName('copyClass2')[0].onmouseenter = function (){
-                    document.getElementById("but2").style.display="inline";
-                }
-            }
-
-            document.getElementById("but3").style.display="none";
-            if(document.getElementsByClassName('preClass3').length> 0){
-                document.getElementsByClassName('preClass3')[0].onmouseenter = function (){
-                    document.getElementById("but3").style.display="inline";
-                }
-                document.getElementsByClassName('preClass3')[0].onmouseleave  = function (){
-                    document.getElementById("but3").style.display="none";
-                }
-                document.getElementsByClassName('copyClass3')[0].onmouseenter = function (){
-                    document.getElementById("but3").style.display="inline";
-                }
-            }
-            document.getElementById("but4").style.display="none";
-            if(document.getElementsByClassName('preClass4').length> 0){
-                document.getElementsByClassName('preClass4')[0].onmouseenter = function (){
-                    document.getElementById("but4").style.display="inline";
-                }
-                document.getElementsByClassName('preClass4')[0].onmouseleave  = function (){
-                    document.getElementById("but4").style.display="none";
-                }
-                document.getElementsByClassName('copyClass4')[0].onmouseenter = function (){
-                    document.getElementById("but4").style.display="inline";
-                }
-            }
-
-            document.getElementById("but5").style.display="none";
-            if(document.getElementsByClassName('preClass5').length> 0){
-                document.getElementsByClassName('preClass5')[0].onmouseenter = function (){
-                    document.getElementById("but5").style.display="inline";
-                }
-                document.getElementsByClassName('preClass5')[0].onmouseleave  = function (){
-                    document.getElementById("but5").style.display="none";
-                }
-                document.getElementsByClassName('copyClass5')[0].onmouseenter = function (){
-                    document.getElementById("but5").style.display="inline";
-                }
-            }
-
-            document.getElementById("but6").style.display="none";
-            if(document.getElementsByClassName('preClass6').length> 0){
-                document.getElementsByClassName('preClass6')[0].onmouseenter = function (){
-                    document.getElementById("but6").style.display="inline";
-                }
-                document.getElementsByClassName('preClass6')[0].onmouseleave  = function (){
-                    document.getElementById("but6").style.display="none";
-                }
-                document.getElementsByClassName('copyClass6')[0].onmouseenter = function (){
-                    document.getElementById("but6").style.display="inline";
-                }
-            }
-
-            document.getElementById("but7").style.display="none";
-            if(document.getElementsByClassName('preClass7').length> 0){
-                document.getElementsByClassName('preClass7')[0].onmouseenter = function (){
-                    document.getElementById("but7").style.display="inline";
-                }
-                document.getElementsByClassName('preClass7')[0].onmouseleave  = function (){
-                    document.getElementById("but7").style.display="none";
-                }
-                document.getElementsByClassName('copyClass7')[0].onmouseenter = function (){
-                    document.getElementById("but7").style.display="inline";
-                }
-            }
-
-            document.getElementById("but8").style.display="none";
-            if(document.getElementsByClassName('preClass8').length> 0){
-                document.getElementsByClassName('preClass8')[0].onmouseenter = function (){
-                    document.getElementById("but8").style.display="inline";
-                }
-                document.getElementsByClassName('preClass8')[0].onmouseleave  = function (){
-                    document.getElementById("but8").style.display="none";
-                }
-                document.getElementsByClassName('copyClass8')[0].onmouseenter = function (){
-                    document.getElementById("but8").style.display="inline";
-                }
-            }
-    },300)
-
-    let clipboard = new ClipboardJS('#but', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        return filter();
+        },
+        destroyed(){
+            this.clipboard.destroy()
+            this.clipboard1.destroy()
+            this.clipboard2.destroy()
+            this.clipboard3.destroy()
+            this.clipboard4.destroy()
+            this.clipboard5.destroy()
+            this.clipboard6.destroy()
+            this.clipboard7.destroy()
+            this.clipboard8.destroy()
         }
-    });
-    clipboard.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    
-    clipboard.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard1 = new ClipboardJS('#but1', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue1 = document.getElementsByClassName('code1')[0].innerHTML
-        
-        return filter(codeValue1);
-        }
-    });
-    clipboard1.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard1.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard2 = new ClipboardJS('#but2', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue2 = document.getElementsByClassName('code2')[0].innerHTML
-        
-        return filter(codeValue2);
-        }
-    });
-    clipboard2.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard2.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard3 = new ClipboardJS('#but3', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue3 = document.getElementsByClassName('code3')[0].innerHTML
-        
-        return filter(codeValue3);
-        }
-    });
-    clipboard3.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard3.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard4 = new ClipboardJS('#but4', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue4 = document.getElementsByClassName('code4')[0].innerHTML
-        
-        return filter(codeValue4);
-        }
-    });
-    clipboard4.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard4.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard5 = new ClipboardJS('#but5', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue5 = document.getElementsByClassName('code5')[0].innerHTML
-        
-        return filter(codeValue5);
-        }
-    });
-    clipboard5.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard5.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard6 = new ClipboardJS('#but6', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue6 = document.getElementsByClassName('code6')[0].innerHTML
-        
-        return filter(codeValue6);
-        }
-    });
-    clipboard6.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard6.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard7 = new ClipboardJS('#but7', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue7 = document.getElementsByClassName('code7')[0].innerHTML
-        
-        return filter(codeValue7);
-        }
-    });
-    clipboard7.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard7.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-
-    let clipboard8 = new ClipboardJS('#but8', {
-        text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        codeValue8 = document.getElementsByClassName('code8')[0].innerHTML
-        
-        return filter(codeValue8);
-        }
-    });
-    clipboard8.on('success', function(e) {
-        ELEMENT.Message({
-        message: '复制代码成功',
-        type: 'success'
-        });
-    });
-    clipboard8.on('error', function(e) {
-        ELEMENT.Message.error('错了哦，这是一条错误消息');
-    });
-}
-function escape2Html(str) {
-  var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
-  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){
-    return arrEntities[t];
-  });
-}
-//过滤html标签
-function filter(html) {
-  return html
-    .replace(/<(?:.|\n)*?>/gm, '')
-    .replace(/(&rdquo;)/g, '"')
-    .replace(/&ldquo;/g, '"')
-    .replace(/&mdash;/g, '-')
-    .replace(/&nbsp;/g, '')
-    .replace(/&gt;/g, '>')
-    .replace(/&lt;/g, '<')
-    // .replace(/<[\w\s"':=\/]*/, '')
-}
-
+	}
 </script>
 
 <style scoped>
