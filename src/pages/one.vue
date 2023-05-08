@@ -291,118 +291,117 @@
                 document.getElementById("but6").style.display="none";
                 document.getElementById("but7").style.display="none";
                 document.getElementById("but8").style.display="none";
-                setTimeout(() => {
-                        codeValue = document.getElementsByClassName('code')[0].innerHTML
-                        
-                        if(document.getElementsByClassName('preClass').length> 0){
-                            document.getElementsByClassName('preClass')[0].onmouseenter = function (){
-                                document.getElementById("but").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass')[0].onmouseleave  = function (){
-                                document.getElementById("but").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass')[0].onmouseenter = function (){
-                                document.getElementById("but").style.display="inline";
-                            }
+     
+                codeValue = document.getElementsByClassName('code')[0].innerHTML
+                if(document.getElementsByClassName('preClass').length> 0){
+                    document.getElementsByClassName('preClass')[0].onmouseenter = function (){
+                        document.getElementById("but").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass')[0].onmouseleave  = function (){
+                        document.getElementById("but").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass')[0].onmouseenter = function (){
+                        document.getElementById("but").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass1').length> 0){
+                    document.getElementsByClassName('preClass1')[0].onmouseenter = function (){
+                        document.getElementById("but1").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass1')[0].onmouseleave  = function (){
+                        document.getElementById("but1").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass1')[0].onmouseenter = function (){
+                        document.getElementById("but1").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass2').length> 0){
+                    document.getElementsByClassName('preClass2')[0].onmouseenter = function (){
+                        document.getElementById("but2").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass2')[0].onmouseleave  = function (){
+                        document.getElementById("but2").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass2')[0].onmouseenter = function (){
+                        document.getElementById("but2").style.display="inline";
+                    }
+                }
+
+
+                if(document.getElementsByClassName('preClass3').length> 0){
+                    document.getElementsByClassName('preClass3')[0].onmouseenter = function (){
+                        document.getElementById("but3").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass3')[0].onmouseleave  = function (){
+                        document.getElementById("but3").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass3')[0].onmouseenter = function (){
+                        document.getElementById("but3").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass4').length> 0){
+                    document.getElementsByClassName('preClass4')[0].onmouseenter = function (){
+                        document.getElementById("but4").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass4')[0].onmouseleave  = function (){
+                        document.getElementById("but4").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass4')[0].onmouseenter = function (){
+                        document.getElementById("but4").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass5').length> 0){
+                    document.getElementsByClassName('preClass5')[0].onmouseenter = function (){
+                        document.getElementById("but5").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass5')[0].onmouseleave  = function (){
+                        document.getElementById("but5").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass5')[0].onmouseenter = function (){
+                        document.getElementById("but5").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass6').length> 0){
+                    document.getElementsByClassName('preClass6')[0].onmouseenter = function (){
+                        document.getElementById("but6").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass6')[0].onmouseleave  = function (){
+                        document.getElementById("but6").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass6')[0].onmouseenter = function (){
+                        document.getElementById("but6").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass7').length> 0){
+                    document.getElementsByClassName('preClass7')[0].onmouseenter = function (){
+                        document.getElementById("but7").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass7')[0].onmouseleave  = function (){
+                        document.getElementById("but7").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass7')[0].onmouseenter = function (){
+                        document.getElementById("but7").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass8').length> 0){
+                    document.getElementsByClassName('preClass8')[0].onmouseenter = function (){
+                        document.getElementById("but8").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass8')[0].onmouseleave  = function (){
+                        document.getElementById("but8").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass8')[0].onmouseenter = function (){
+                        document.getElementById("but8").style.display="inline";
+                    }
                         }
 
-                        if(document.getElementsByClassName('preClass1').length> 0){
-                            document.getElementsByClassName('preClass1')[0].onmouseenter = function (){
-                                document.getElementById("but1").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass1')[0].onmouseleave  = function (){
-                                document.getElementById("but1").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass1')[0].onmouseenter = function (){
-                                document.getElementById("but1").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass2').length> 0){
-                            document.getElementsByClassName('preClass2')[0].onmouseenter = function (){
-                                document.getElementById("but2").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass2')[0].onmouseleave  = function (){
-                                document.getElementById("but2").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass2')[0].onmouseenter = function (){
-                                document.getElementById("but2").style.display="inline";
-                            }
-                        }
-
-
-                        if(document.getElementsByClassName('preClass3').length> 0){
-                            document.getElementsByClassName('preClass3')[0].onmouseenter = function (){
-                                document.getElementById("but3").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass3')[0].onmouseleave  = function (){
-                                document.getElementById("but3").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass3')[0].onmouseenter = function (){
-                                document.getElementById("but3").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass4').length> 0){
-                            document.getElementsByClassName('preClass4')[0].onmouseenter = function (){
-                                document.getElementById("but4").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass4')[0].onmouseleave  = function (){
-                                document.getElementById("but4").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass4')[0].onmouseenter = function (){
-                                document.getElementById("but4").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass5').length> 0){
-                            document.getElementsByClassName('preClass5')[0].onmouseenter = function (){
-                                document.getElementById("but5").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass5')[0].onmouseleave  = function (){
-                                document.getElementById("but5").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass5')[0].onmouseenter = function (){
-                                document.getElementById("but5").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass6').length> 0){
-                            document.getElementsByClassName('preClass6')[0].onmouseenter = function (){
-                                document.getElementById("but6").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass6')[0].onmouseleave  = function (){
-                                document.getElementById("but6").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass6')[0].onmouseenter = function (){
-                                document.getElementById("but6").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass7').length> 0){
-                            document.getElementsByClassName('preClass7')[0].onmouseenter = function (){
-                                document.getElementById("but7").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass7')[0].onmouseleave  = function (){
-                                document.getElementById("but7").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass7')[0].onmouseenter = function (){
-                                document.getElementById("but7").style.display="inline";
-                            }
-                        }
-
-                        if(document.getElementsByClassName('preClass8').length> 0){
-                            document.getElementsByClassName('preClass8')[0].onmouseenter = function (){
-                                document.getElementById("but8").style.display="inline";
-                            }
-                            document.getElementsByClassName('preClass8')[0].onmouseleave  = function (){
-                                document.getElementById("but8").style.display="none";
-                            }
-                            document.getElementsByClassName('copyClass8')[0].onmouseenter = function (){
-                                document.getElementById("but8").style.display="inline";
-                            }
-                        }
-                },300)
 
                 _that.clipboard = new ClipboardJS('#but', {
                     text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
@@ -643,4 +642,4 @@
 .tag {
     color: #e2777a;
 }
-</style>>
+</style>
