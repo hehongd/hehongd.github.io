@@ -28,8 +28,6 @@
 <body>
     <!-- <iframe></iframe> 对象代表一个 HTML 框架 -->
     <div id="app" v-cloak>
-        <!-- <button id="but" >点击复制</button> -->
-
         <el-header style="height: 45px;padding: 0;">
             <el-row :gutter="20" style="height: 100%;">
                 <el-col :span="6" class="navigation">
@@ -74,7 +72,8 @@
                         :default-active='defaultActive'
                         @open="handleOpen" 
                         @close="handleClose" 
-                        :collapse="isCollapse" >
+                        :collapse="isCollapse" 
+                        @select="menuSelect">
                             <el-submenu index="1">
                             <template slot="title">
                                 <i class="el-icon-location"></i>
@@ -85,6 +84,15 @@
                                 <el-menu-item index="/two">选项2</el-menu-item>
                             </el-menu-item-group>
                             </el-submenu>
+                            <el-submenu index="2">
+                                <template slot="title">
+                                    <i class="el-icon-location"></i>
+                                    <span slot="title">new Date</span>
+                                </template>
+                                <el-menu-item-group>
+                                    <el-menu-item index="/weekYear">设置周下拉框/月下拉框</el-menu-item>
+                                </el-menu-item-group>
+                                </el-submenu>
                         </el-menu>
                         <!-- <router-link to="/hash1">hash1</router-link>
                         <router-link to="/hash2">hash2</router-link> -->
@@ -97,25 +105,10 @@
         </el-container>
     </div>
     <script type="module">
-        //  var clipboard = new ClipboardJS('#but', {
-        //     text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
-        //     return '测试复制';
-        //     }
-        // });
-        // clipboard.on('success', function(e) {
-        //     alert("复制成功");
-        // });
-        
-        // clipboard.on('error', function(e) {
-        //     alert("复制失败");
-        // });
-        
-        // 2. 定义路由
-        // 每个路由应该映射一个组件。 其中"component" 可以是 通过 Vue.extend()
-        //  创建的组件构造器， 或者，只是一个组件配置对象.
         const routes = [
             { path: '/one', component:httpVueLoader('./src/pages/one.vue')},
-            { path: '/two', component:httpVueLoader('./src/pages/two.vue')}
+            { path: '/two', component:httpVueLoader('./src/pages/two.vue')},
+            { path: '/weekYear', component:httpVueLoader('./src/pages/weekYear.vue')},
         ]
 
         // 3. 创建 router 实例，然后传 `routes` 配置
@@ -124,9 +117,9 @@
         })
         var vm = new Vue({
             el:"#app",
-            // components: {
-            //     'one': httpVueLoader('./src/pages/one.vue')
-            // },
+            components: {
+                one: httpVueLoader('./src/pages/one.vue')
+            },
 
             data(){
                 return{
@@ -147,9 +140,16 @@
             },
             mounted(){
                this.getCanvas();
-               this.getFlowers();  
+               this.getFlowers(); 
+               this.$nextTick(() =>{
+                console.log(window)
+               })
             },
             methods:{
+                menuSelect(val){
+                    console.log(val)
+                    console.log(this)
+                },
                 jsCopy(){
                     console.log(99)
                     var e=document.getElementById("contents");//对象是contents
