@@ -102,6 +102,15 @@
                                     <el-menu-item index="/scss">VUE3 配置scss</el-menu-item>
                                 </el-menu-item-group>
                             </el-submenu>
+                            <el-submenu index="4">
+                                <template slot="title">
+                                    <i class="el-icon-location"></i>
+                                    <span slot="title">echarts</span>
+                                </template>
+                                <el-menu-item-group>
+                                    <el-menu-item index="/echarts">echarts自适应(vue2)</el-menu-item>
+                                </el-menu-item-group>
+                            </el-submenu>
                         </el-menu>
                         <!-- <router-link to="/hash1">hash1</router-link>
                         <router-link to="/hash2">hash2</router-link> -->
@@ -119,6 +128,7 @@
             { path: '/two', component:httpVueLoader('./src/pages/two.vue')},
             { path: '/weekYear', component:httpVueLoader('./src/pages/weekYear.vue')},
             { path: '/scss', component:httpVueLoader('./src/pages/scss.vue')},
+            { path: '/echarts', component:httpVueLoader('./src/pages/echarts.vue')},
         ]
 
         // 3. 创建 router 实例，然后传 `routes` 配置
