@@ -200,6 +200,7 @@ module.exports = {
         },
         destroyed(){
             this.clipboard.destroy()
+            this.clipboard1.destroy()
         }
 }
 </script>
