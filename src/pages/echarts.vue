@@ -1,11 +1,32 @@
 <template>
     <div>
         <article class="articleContanier">
-            <p>echarts自适应</p>
+            <p>一.main.js引入echarts</p>
             <div class="contanier">
                 <el-button icon="el-icon-document-copy" class="copy copyClass" id="but"></el-button>
                 <pre class="pre preClass" id="bar">
                     <code class="code">
+                        import Vue from 'vue'
+                        import App from './App'
+                        import router from './router'
+                        import echarts from 'echarts'
+
+                        Vue.prototype.$echarts = function (el) {
+                            return echarts.init(el, null, {renderer: 'svg'})
+                        }
+                        Vue.config.productionTip = false;
+                        new Vue({
+                        router,
+                        render: h => h(App)
+                        }).$mount('#app')
+                    </code>
+                </pre>
+            </div>
+            <p>echarts自适应</p>
+            <div class="contanier">
+                <el-button icon="el-icon-document-copy" class="copy copyClass1" id="but1"></el-button>
+                <pre class="pre preClass1" id="bar">
+                    <code class="code1">
                         &lt;template&gt;
                             &lt;div class="page1"&gt;
                                 &lt;div&gt;
@@ -86,6 +107,7 @@ module.exports = {
     data: function() {
         return {
             clipboard:null,
+            clipboard1:null,
         }
     },
     mounted(){
@@ -95,6 +117,7 @@ module.exports = {
             copy() {
                 let _that = this
                 document.getElementById("but").style.display="none";
+                document.getElementById("but1").style.display="none";
      
                 codeValue = document.getElementsByClassName('code')[0].innerHTML
                 if(document.getElementsByClassName('preClass').length> 0){
@@ -106,6 +129,18 @@ module.exports = {
                     }
                     document.getElementsByClassName('copyClass')[0].onmouseenter = function (){
                         document.getElementById("but").style.display="inline";
+                    }
+                }
+
+                if(document.getElementsByClassName('preClass1').length> 0){
+                    document.getElementsByClassName('preClass1')[0].onmouseenter = function (){
+                        document.getElementById("but1").style.display="inline";
+                    }
+                    document.getElementsByClassName('preClass1')[0].onmouseleave  = function (){
+                        document.getElementById("but1").style.display="none";
+                    }
+                    document.getElementsByClassName('copyClass1')[0].onmouseenter = function (){
+                        document.getElementById("but1").style.display="inline";
                     }
                 }
 
@@ -124,6 +159,23 @@ module.exports = {
                 });
                 
                 _that.clipboard.on('error', function(e) {
+                    ELEMENT.Message.error('错了哦，这是一条错误消息');
+                });
+
+                _that.clipboard1 = new ClipboardJS('#but1', {
+                    text: function() {    // 如果想从其它DOM元素内容复制。应该是target:function(){return: };
+                    let codeValue1 = document.getElementsByClassName('code1')[0].innerHTML
+                    
+                    return _that.filter(codeValue1);
+                    }
+                });
+                _that.clipboard1.on('success', function(e) {
+                    ELEMENT.Message({
+                    message: '复制代码成功',
+                    type: 'success'
+                    });
+                });
+                _that.clipboard1.on('error', function(e) {
                     ELEMENT.Message.error('错了哦，这是一条错误消息');
                 });
             },
