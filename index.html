@@ -91,6 +91,7 @@
                                 </template>
                                 <el-menu-item-group>
                                     <el-menu-item index="/weekYear">设置周下拉框/月下拉框</el-menu-item>
+                                    <el-menu-item index="/wyList">设置前一周(前一月)数据</el-menu-item>
                                 </el-menu-item-group>
                             </el-submenu>
                             <el-submenu index="3">
@@ -129,6 +130,7 @@
             { path: '/weekYear', component:httpVueLoader('./src/pages/weekYear.vue')},
             { path: '/scss', component:httpVueLoader('./src/pages/scss.vue')},
             { path: '/echarts', component:httpVueLoader('./src/pages/echarts.vue')},
+            { path: '/wyList', component:httpVueLoader('./src/pages/wyList.vue')},
         ]
 
         // 3. 创建 router 实例，然后传 `routes` 配置
