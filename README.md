@@ -1,5 +1,29 @@
+# vue-project
 
-## 博客访问地址
-https://hehongd.github.io/#/
-## 黑马优购小程序地址
-https://applet-base-api-t.itheima.net/docs-uni-shop/index.htm#tabbar-%E7%9B%B8%E5%85%B3%E7%9A%84%E9%A1%B5%E9%9D%A2
+This template should help get you started developing with Vue 3 in Vite.
+
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
