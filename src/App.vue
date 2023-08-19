@@ -3,7 +3,7 @@
 import { onMounted } from "vue"
 import MyHeader from "@/components/MyHeader.vue"
 import LeftSide from "@/components/LeftSide.vue"
-import MyMain from "@/components/MyMain"
+import MyMain from "@/views/MyMain"
 import { getFlowers } from "@/utils"
 
 onMounted(() => {getFlowers()})

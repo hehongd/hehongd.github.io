@@ -1,0 +1,67 @@
+[{
+    "title": "VUE3",
+    "path": "1",
+    "icon": {
+        "name": "Location",
+        "__file": "location.vue"
+    },
+    "children": [{
+        "title": "Mixin组件复用",
+        "path": "/mixin",
+        "icon": {
+            "name": "Location",
+            "__file": "location.vue"
+        }
+    }]
+}, {
+    "title": "new Date",
+    "path": "2",
+    "icon": {
+        "name": "Menu",
+        "__file": "menu.vue"
+    },
+    "children": [{
+        "title": "设置周下拉框/月下拉框",
+        "path": "/weekYear",
+        "icon": {
+            "name": "Menu",
+            "__file": "menu.vue"
+        }
+    }, {
+        "title": "设置前一周(前一月)数据",
+        "path": "/wyList",
+        "icon": {
+            "name": "Menu",
+            "__file": "menu.vue"
+        }
+    }]
+}, {
+    "title": "ECHARTS",
+    "path": "3",
+    "icon": {
+        "name": "Location",
+        "__file": "location.vue"
+    },
+    "children": [{
+        "title": "柱状图",
+        "path": "/category",
+        "icon": {
+            "name": "Location",
+            "__file": "location.vue"
+        }
+    }, {
+        "title": "扁图",
+        "path": "/pie",
+        "icon": {
+            "name": "Location",
+            "__file": "location.vue"
+        }
+    }, {
+        "title": "线性图",
+        "path": "/line",
+        "icon": {
+            "name": "Location",
+            "__file": "location.vue"
+        }
+    }]
+}]

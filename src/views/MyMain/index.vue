@@ -6,7 +6,7 @@
 </template>
 <script setup>
     import { ref, watch } from "vue"
-    import MyNote from "./MyNote"
+    import MyNote from "../MyNote"
     import MyMessage from "./MyMessage.vue"
     import { useUserStore } from "@/store/user"
     const isShow = ref('1')
@@ -18,6 +18,7 @@
 <style lang="scss" scoped>
 .el-main {
     padding: 10px 10px 0 10px;
+    width: calc(100vw - 222px);
 }
 ::v-deep .el-sub-menu__title {
     color: #FFF;

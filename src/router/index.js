@@ -4,18 +4,38 @@ const routes = [
   {
     path: '/mixin',
     name: 'Mixin',
-    component: ()=> import('../components/MyMain/MyNote/mixin.vue')
+    component: ()=> import('@/views/MyNote/mixin.vue')
+  },
+  {
+    path: '/scss',
+    name: 'Scss',
+    component: ()=> import('@/views/MyNote/scss.vue')
   },
   {
     path: '/weekYear',
     name: 'WeekYear',
-    component: ()=> import('../components/MyMain/MyNote/weekYear.vue')
+    component: ()=> import('@/views/MyNote/weekYear.vue')
   },
   {
     path: '/wyList',
     name: 'WyList',
-    component: ()=> import('../components/MyMain/MyNote/wyList.vue')
+    component: ()=> import('@/views/MyNote/wyList.vue')
   },
+  {
+    path: '/category',
+    name: 'Category',
+    component: ()=> import('@/views/echarts/category')
+  },
+  {
+    path: '/pie',
+    name: 'Pie',
+    component: ()=> import('@/views/echarts/pie')
+  },
+  {
+    path: '/line',
+    name: 'Line',
+    component: ()=> import('@/views/echarts/line')
+  }
 ]
 
 const router = createRouter({
