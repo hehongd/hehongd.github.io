@@ -46,8 +46,6 @@
 }
 .el-header {
     --el-header-padding:0;
-}
-.el-header[data-v-577b919c] {
     background-color: var(--el-menu-bg-color);
 }
 .right-menu {
