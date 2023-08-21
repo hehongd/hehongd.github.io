@@ -7,6 +7,7 @@ import MyMain from "@/views/MyMain"
 import { getFlowers } from "@/utils"
 
 onMounted(() => {getFlowers()})
+
 </script>
 
 <template>

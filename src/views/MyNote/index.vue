@@ -12,7 +12,7 @@
         :collapse="isCollapse"
         @open="handleOpen"
         @close="handleClose"
-        @select="(e)=>defaultActive= e"
+        @select="handleMenu"
       >
         <el-sub-menu v-for="item in menuList" :key="item.path" :index="item.path">
           <template #title>
@@ -20,78 +20,57 @@
             <span>{{ item.title }}</span>
           </template>
           <el-menu-item-group v-for="n in item.children" :key="n.path">
-            <el-menu-item :index="n.path">{{ n.title }}</el-menu-item>
+            <el-menu-item :index="n.path">
+              <!-- <svg-icon icon-class="user" /> -->
+              {{ n.title }}
+            </el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
       </el-menu>
     </div>
-    <div class="routerView">
+    <div class="routerView" ref="refRouter" @scroll="addScroll">
       <router-view />
     </div>
   </div>
 </template>
 <script setup>
-import { ref,shallowRef,getCurrentInstance, watch, onMounted } from "vue";
-import {
-  Document,
-  Menu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
+import { ref, watch, onMounted,computed} from "vue";
 import {useRouter} from "vue-router"
-import { getMenu } from '@/api/menu.js'
 import axios from 'axios'
-let { proxy } = getCurrentInstance();
+import { useUserStore } from "@/store/user"
+
+
 const router = useRouter()
-const menuList = ref([
-  { 
-    title:'VUE3',path:'1',icon:shallowRef(Location),
-    children:[
-      {title:'Mixin组件复用',path:'/mixin',icon:shallowRef(Location)},
-      {title:'SCSS使用',path:'/scss',icon:shallowRef(Location)},
-    ] 
-  },
-  {
-    title:'new Date',path:'2',icon:shallowRef(Menu),
-    children:[
-      { title:'设置周下拉框/月下拉框',path:'/weekYear',icon:shallowRef(Menu) },
-      { title:'设置前一周(前一月)数据',path:'/wyList',icon:shallowRef(Menu) }
-    ]
-  },
-  { title:'ECHARTS',path:'3',icon:shallowRef(Location),
-    children:[
-      { title:'柱状图',path:'/category',icon:shallowRef(Location) },
-      { title:'扁图',path:'/pie',icon:shallowRef(Location) },
-      { title:'线性图',path:'/line',icon:shallowRef(Location) },
-    ] 
-  },
-  // { title:'截图软件',path:'4',icon:shallowRef(Location),
-  //   children:[
-  //     { title:'柱状图',path:'/category',icon:shallowRef(Location) },
-  //   ] 
-  // },
-])
-// const menuList = ref([])
+const menuList = ref([])
 const defaultActive = ref('/mixin')
 const isCollapse = ref(false)
-const handleOpen = (key, keyPath) =>{
-  console.log(key, keyPath)
-}
-const handleClose = (key, keyPath) =>{
-  console.log(key, keyPath)
-}
-// const request =axios.post('@/views/JSON/menu.json').then(res => {console.log(res)})
+const refRouter = ref(null)
+const user = useUserStore()
+
+const handleOpen = (key, keyPath) =>{console.log(key, keyPath)}
+const handleClose = (key, keyPath) =>{console.log(key, keyPath)}
 watch(() =>router.currentRoute.value.path,(newValue,oldValue)=> {
   defaultActive.value = newValue
 },{ immediate: true })
 onMounted( async() => {
-  // let data1 = await fetch('../../JSON/menu.json')
-  // console.log(data1)
-  // let data = await getMenu()
-  // console.log(data)
-  let {data,res} = await axios.get('src/JSON/menu.json')
-  console.log(res)
+  let {data:res} = await axios.get('src/JSON/menu.json')
+  menuList.value = res
+  window.addEventListener('scroll',addScroll)
 })
+const handleMenu = (e) => {
+  defaultActive.value= e
+  refRouter.value.scrollTop = 0
+}
+const routerScrollTop = computed(() => user.routerScrollTop);
+const addScroll = () => {
+  user.scrollTop = refRouter.value.scrollTop
+  // scrollTop 滚动的高度 + clientHeigh 可见区域的高度 = scrollHeight 文档内容实际高度 
+  refRouter.value.scrollTop >100 ? user.bottomingOut = true : user.bottomingOut = false
+}
+watch(routerScrollTop, (newVal,oldVal) =>{
+  refRouter.value.scrollTop = newVal
+})
+
 </script>
 <style lang="scss" scoped>.contanier {
   height: calc(100% - 53px);

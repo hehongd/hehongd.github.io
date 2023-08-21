@@ -19,18 +19,18 @@
     import { useUserStore } from "@/store/user"
 
     const activeIndex = ref('1')
-    const imgUrl =  ref("src/assets/full-screen.png")
+    const imgUrl =  ref("src/assets/images/full-screen.png")
     const user = useUserStore()
 
     const flag = ref(true)
     const handleImage = () => {
         if( flag.value ) {
             signOut()
-            imgUrl.value = "src/assets/full-screen.png"  
+            imgUrl.value = "src/assets/images/full-screen.png"  
             flag.value = false
         } else {
             exitFullscreen()
-            imgUrl.value = "src/assets/exit-full-screen.png"  
+            imgUrl.value = "src/assets/images/exit-full-screen.png"  
             flag.value = true
         }
     }

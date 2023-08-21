@@ -6,8 +6,8 @@
             <p>1、新建mixin/base.js</p>
             <div class="contanier" @mouseover="show=true" @mouseleave="show=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show" @click="copy(refClone)"></el-button>
-                <pre class="pre preClass" ref="refClone">
-                    <code class="code">
+                <pre class="pre" ref="refClone">
+                    <code>
                         <span class="keyword">const</span> baseMixin = {
                             <span class="function">data</span>() {
                                 <span class="keyword">return</span>{
@@ -31,8 +31,8 @@
             <p>2、使用mixin</p>
             <div class="contanier"  @mouseover="show1=true" @mouseleave="show1=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show1" @click="copy(refClone1)"></el-button>
-                <pre class="pre preClass1"  ref="refClone1">
-                    <code class="code1">
+                <pre class="pre"  ref="refClone1">
+                    <code>
                         &lt;<span class="tag">template</span>&gt;
                         &lt;<span class="tag">div</span>&gt;
                             首页模板--{{'\u007B'}}{{'\u007B'}}apiDomain{{'\u007d'}}{{'\u007d'}}
@@ -57,8 +57,8 @@
             <p>1、比如，数据对象在内部会进行递归合并，并在发生冲突时以组件数据优先。</p>
             <div class="contanier" @mouseover="show2=true" @mouseleave="show2=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show2" @click="copy(refClone2)"></el-button>
-                <pre class="pre preClass2" ref="refClone2">
-                    <code class="code2">
+                <pre class="pre" ref="refClone2">
+                    <code>
                        <span class="keyword">const</span> myMixin = {
                             <span class="keyword">data</span>() {
                                 <span class="keyword">return</span> {
@@ -86,8 +86,8 @@
             <p>2、同名钩子函数将合并为一个数组，因此都将被调用。另外，混入对象的钩子将在组件自身钩子之前调用。</p>
             <div class="contanier" @mouseover="show3=true" @mouseleave="show3=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show3" @click="copy(refClone3)"></el-button>
-                <pre class="pre preClass3" ref="refClone3" >
-                    <code class="code3">
+                <pre class="pre" ref="refClone3" >
+                    <code>
                         <span class="keyword">const</span> myMixin = {
                             <span class="function">created</span>() {
                                 console.<span class="function">log</span>(<span class="string">"mixin hook called"</span>)
@@ -107,8 +107,8 @@
             <p>// => "混入对象的钩子被调用"<br/>// => "组件钩子被调用"<br/>3、值为对象的选项，例如 methods、components，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。</p>
             <div class="contanier" @mouseover="show4=true" @mouseleave="show4=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show4"  @click="copy(refClone4)"></el-button>
-                <pre class="pre preClass4" ref="refClone4">
-                    <code class="code4">
+                <pre class="pre" ref="refClone4">
+                    <code>
                         <span class="keyword">const</span> myMixin = {
                             methods: {
                                 <span class="function">foo</span>() {
@@ -144,8 +144,8 @@
             <p>三、全局配置Mixin(1)<br/>你还可以为 Vue 应用程序全局应用 mixin</p>
             <div class="contanier" @mouseover="show5=true" @mouseleave="show5=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show5" @click="copy(refClone5)"></el-button>
-                <pre class="pre preClass5" ref="refClone5">
-                    <code class="code5">
+                <pre class="pre" ref="refClone5">
+                    <code>
                         <span class="keyword">const</span> app = Vue.<span class="function">createApp</span>({
                             myOption: <span class="string">"hello!"</span>
                         })
@@ -182,8 +182,8 @@
             <p>（1）在utils下新建autoHeight.js文件</p>
             <div class="contanier" @mouseover="show6=true" @mouseleave="show6=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show6" @click="copy(refClone6)"></el-button>
-                <pre class="pre preClass6" ref="refClone6">
-                    <code class="code6">
+                <pre class="pre" ref="refClone6">
+                    <code>
                         <span class="keyword">let</span> mixin = {
                             <span class="function">data</span>() {
                                 <span class="keyword">return</span> {
@@ -233,8 +233,8 @@
             <p>（2）在main.js导入autoHeight.js</p>
             <div class="contanier" @mouseover="show7=true" @mouseleave="show7=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show7" @click="copy(refClone7)"></el-button>
-                <pre class="pre preClass7" ref="refClone7">
-                    <code class="code7">
+                <pre class="pre" ref="refClone7">
+                    <code>
                         // 在全局main.js导入
                         <span class="keyword">import</span> mix <span class="keyword">form</span> <span class="string">"./utils/autoHeight"</span>
                         app.<span class="function">mixin</span>(mix)
@@ -244,8 +244,8 @@
             <p>（3）在vue页面使用</p>
             <div class="contanier" @mouseover="show8=true" @mouseleave="show8=false">
                 <el-button :icon="DocumentCopy" class="copy" v-show="show8" @click="copy(refClone8)"></el-button>
-                <pre class="pre preClass8" ref="refClone8">
-                    <code class="code8">
+                <pre class="pre" ref="refClone8">
+                    <code>
                         //  在vue页面调用
                         &lt;el-table <span class="keyword">:data</span>=<span class="string">"tableData"</span> <span class="keyword">:height</span>t=<span class="string">"myTableHeight"</span>&gt;
                             &lt;el-table-column prop=<span class="string">"date"</span> label=<span class="string">"Date"</span> width=<span class="string">"180"</span> /&gt;
@@ -256,12 +256,18 @@
                 </pre>
             </div>
         </article>
+        <div href="#one" class="backToTop" v-show="bottomingOut"  @click="goTop">回到顶部</div>
     </div>
 </template>
 <script setup name="Mixin">
 import { DocumentCopy } from '@element-plus/icons-vue'
-import { ref } from 'vue'
-import { copy } from "@/utils/copy.js"
+import { ref, watch,onMounted } from 'vue'
+import { ElMessage } from 'element-plus'
+import { useUserStore } from "@/store/user"
+
+const user = useUserStore()
+
+const bottomingOut = computed(() => user.bottomingOut);
 const show = ref(false)
 const show1 = ref(false)
 const show2 = ref(false)
@@ -280,58 +286,12 @@ const refClone5 = ref(null)
 const refClone6 = ref(null)
 const refClone7 = ref(null)
 const refClone8 = ref(null)
+onMounted(()=> {console.log(user.bottomingOut)})
+watch(bottomingOut, (newValue, oldValue) => {
+    console.log('count changed from', oldValue, 'to', newValue);
+});
 </script>
 
-<style scoped>
-.articleContanier {
-    line-height: 1.8;
-}
-.articleContanier p {
-    margin-bottom: 20px;
-}
-.contanier {
-    position: relative;
-}
-.copy {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 32px;
-    height: 24px;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 0;
-    border: none;
-    border-radius: 6px;
-    color: #ccc;
-    background-color: hsla(0,0%,90.2%,.2);
-    box-shadow: 0 2px 0 0 rgba(0,0,0,.25);
-}
-.pre {
-    word-wrap: normal;
-    word-break: break-all;
-    white-space: pre;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    z-index: 0;
-    padding: 1em;
-    line-height: 1.5;
-    color: #ccc;
-    background: #2d2d2d;
-}
-.keyword {
-    color: #cc99cd;
-}
-.function {
-    color: #f08d49;
-}
-.string {
-    color: #7ec699;
-}
-.tag {
-    color: #e2777a;
-}
+<style lang="scss" scoped>
+
 </style>

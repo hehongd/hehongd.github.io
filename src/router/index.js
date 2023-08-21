@@ -35,6 +35,11 @@ const routes = [
     path: '/line',
     name: 'Line',
     component: ()=> import('@/views/echarts/line')
+  },
+  {
+    path: '/bottomingOut',
+    name: 'BottomingOut',
+    component: ()=> import('@/views/scroll/bottomingOut')
   }
 ]
 

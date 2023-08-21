@@ -1,12 +1,12 @@
 <template>
-<div>
+<div id="one">
         <h1>new Date()</h1>
         <article class="articleContanier">
             <p>一、设置周下拉框</p>
             <div class="contanier" @mouseover="show=true" @mouseleave="show=false">
                 <el-button :icon="DocumentCopy" class="copy copyClass" v-show="show"  @click="copy(refClone)"></el-button>
-                <pre class="pre preClass" ref="refClone">
-                    <code class="code">
+                <pre class="pre" ref="refClone">
+                    <code>
                         // 设置周下拉框，传入年份类型如：'2023'
                         function setWeekOption(year) {
                             let dates = getDay(year || new Date().getFullYear())
@@ -58,8 +58,8 @@
              <p>二、设置月下拉框</p>
             <div class="contanier" @mouseover="show1=true" @mouseleave="show1=false">
                 <el-button :icon="DocumentCopy" class="copy copyClass1" v-show="show1" @click="copy(refClone1)"></el-button>
-                <pre class="pre preClass1" ref="refClone1">
-                    <code class="code1">
+                <pre class="pre" ref="refClone1">
+                    <code>
                         // 获取指定一年月份日期，传入年份字符串列如：'2023'
                         function getMonthDay(year) {
                             let option = []
@@ -81,68 +81,23 @@
                     </code>
                 </pre>
             </div>
-        </article>
+        </article> 
+        <div href="#one" class="backToTop" v-show="bottomingOut"  @click="goTop">回到顶部</div>
     </div>
 </template>
 <script setup name="WeekYear">
 import { DocumentCopy } from '@element-plus/icons-vue'
 import { onMounted, ref } from 'vue'
-import { copy } from "@/utils/copy.js"
+import { useUserStore } from "@/store/user"
+
+const user = useUserStore()
+
+const bottomingOut = computed(() => user.bottomingOut);
 const show = ref(false)
 const show1 = ref(false)
 const refClone = ref(null)
 const refClone1 = ref(null)
 </script>
 <style lang="scss" scoped>
-.articleContanier {
-    line-height: 1.8;
-}
-.articleContanier p {
-    margin-bottom: 20px;
-}
-.contanier {
-    position: relative;
-}
-.copy {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 32px;
-    height: 24px;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 0;
-    border: none;
-    border-radius: 6px;
-    color: #ccc;
-    background-color: hsla(0,0%,90.2%,.2);
-    box-shadow: 0 2px 0 0 rgba(0,0,0,.25);
-}
-.pre {
-    word-wrap: normal;
-    word-break: break-all;
-    white-space: pre;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    z-index: 0;
-    padding: 1em;
-    line-height: 1.5;
-    color: #ccc;
-    background: #2d2d2d;
-}
-.keyword {
-    color: #cc99cd;
-}
-.function {
-    color: #f08d49;
-}
-.string {
-    color: #7ec699;
-}
-.tag {
-    color: #e2777a;
-}
+
 </style>
