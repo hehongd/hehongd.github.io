@@ -1,9 +1,9 @@
 import request from '@/utils/request'
 
 // 查询缓存详细
-export function getMenu() {
+export function getMenuInfo() {
     return request({
-        url: '../JSON/menu.json',
-        method: 'get'
+      url: '/menu.json',
+      method: 'get'
     })
-}
+  }

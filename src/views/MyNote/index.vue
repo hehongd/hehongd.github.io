@@ -36,8 +36,9 @@
 <script setup>
 import { ref, watch, onMounted,computed} from "vue";
 import {useRouter} from "vue-router"
-import axios from 'axios'
+// import axios from 'axios'
 import { useUserStore } from "@/store/user"
+import { getMenuInfo } from '@/api/menu.js'
 
 
 const router = useRouter()
@@ -53,10 +54,12 @@ watch(() =>router.currentRoute.value.path,(newValue,oldValue)=> {
   defaultActive.value = newValue
 },{ immediate: true })
 onMounted( async() => {
-  let {data:res} = await axios.get('src/JSON/menu.json')
+  // let {data:res} = await axios.get('src/JSON/menu.json')
+  let {data:res} = await getMenuInfo()
   menuList.value = res
   window.addEventListener('scroll',addScroll)
 })
+
 const handleMenu = (e) => {
   defaultActive.value= e
   refRouter.value.scrollTop = 0
