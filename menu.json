@@ -1,0 +1,75 @@
+[
+    {
+    "title": "VUE3",
+    "path": "1",
+    "icon": "Grid",
+    "children": [
+        {
+            "title": "Mixin组件复用",
+            "path": "/mixin",
+            "icon": "Location" 
+        }
+    ]
+    }, 
+    {
+    "title": "new Date",
+    "path": "2",
+    "icon": "Watch",
+    "children": [
+        {
+            "title": "设置周下拉框/月下拉框",
+            "path": "/weekYear",
+            "icon": "Menu"
+        },
+        {
+            "title": "设置前一周(前一月)数据",
+            "path": "/wyList",
+            "icon": "Menu"
+        }
+    ]
+    }, 
+    {
+        "title":"SCSS",
+        "path":"3",
+        "icon":"Menu",
+        "children":[
+            { 
+                "title":"VUE3 配置scss",
+                "path":"/scss"
+            }
+        ]
+    },
+    {
+    "title": "ECHARTS",
+    "path": "4",
+    "icon": "PieChart",
+    "children": [
+        {
+        "title": "柱状图",
+        "path": "/category",
+        "icon": "Location"
+        }, 
+        {
+        "title": "扁图",
+        "path": "/pie",
+        "icon": "Location"
+        }, 
+        {
+        "title": "线性图",
+        "path": "/line",
+        "icon": "Location"
+        }
+    ]
+    },
+    {
+        "title":"滚动条相关",
+        "path":"5",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"滚动触底",
+                "path":"/bottomingOut"
+            }
+        ]
+    }
+]
