@@ -58,6 +58,10 @@
         "title": "线性图",
         "path": "/line",
         "icon": "Location"
+        },
+        {
+            "title":"综合看板",
+            "path":"/bulletinBoard"
         }
     ]
     },

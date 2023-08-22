@@ -12,6 +12,7 @@ import './permissions'
 import 'virtual:svg-icons-register'
 import SvgIcon from '@/components/SvgIcon'
 import elementIcons from '@/components/SvgIcon/svgicon'
+import "./assets/style/echarts/ui.scss";
 
 import { copy,goTop } from "@/utils/helpers.js"
 

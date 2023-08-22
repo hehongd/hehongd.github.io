@@ -40,6 +40,11 @@ const routes = [
     path: '/bottomingOut',
     name: 'BottomingOut',
     component: ()=> import('@/views/scroll/bottomingOut')
+  },
+  {
+    path:'/bulletinBoard',
+    name:'BulletinBoard',
+    component:()=> import('@/views/echarts/bulletinBoard')
   }
 ]
 
