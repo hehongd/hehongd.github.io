@@ -1,8 +1,26 @@
 <template>
-  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-      <el-radio-button :label="false">expand</el-radio-button>
-      <el-radio-button :label="true">collapse</el-radio-button>
-  </el-radio-group>
+  <el-row :gutter="20">
+    <el-col :span="1.5">
+      <el-radio-group v-model="isNotice" style="margin-bottom: 20px">
+        <el-tooltip effect="dark" content="显示公告栏" placement="bottom-start">
+          <el-radio-button :label="true"><el-icon :size="size" :color="color"> <Bell/></el-icon></el-radio-button>
+        </el-tooltip>
+        <el-tooltip effect="dark" content="隐藏公告栏" placement="bottom-start">
+          <el-radio-button :label="false"><el-icon :size="size" :color="color"> <MuteNotification/></el-icon></el-radio-button>
+        </el-tooltip>
+      </el-radio-group>
+    </el-col>
+    <el-col :span="1.5">
+      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+        <el-tooltip effect="dark" content="显示菜单栏" placement="bottom-start">
+          <el-radio-button :label="false"><el-icon :size="size" :color="color"> <DArrowRight/></el-icon></el-radio-button>
+        </el-tooltip>
+        <el-tooltip effect="dark" content="隐藏菜单栏" placement="bottom-start">
+          <el-radio-button :label="true"><el-icon :size="size" :color="color"> <DArrowLeft/></el-icon></el-radio-button>
+        </el-tooltip>
+      </el-radio-group>
+    </el-col>
+  </el-row>
   <div class="contanier">
     <div class="menu-contanier">
       <el-menu
@@ -37,7 +55,7 @@
 import { ref, watch, onMounted,computed} from "vue";
 import {useRouter} from "vue-router"
 // import axios from 'axios'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 import { getMenuInfo } from '@/api/menu.js'
 
 
@@ -47,6 +65,11 @@ const defaultActive = ref('/mixin')
 const isCollapse = ref(false)
 const refRouter = ref(null)
 const user = useUserStore()
+const isNotice = ref(true)
+
+watch(isNotice,(newVal,oldVal) => {
+  user.isNotice = newVal
+})
 
 const handleOpen = (key, keyPath) =>{console.log(key, keyPath)}
 const handleClose = (key, keyPath) =>{console.log(key, keyPath)}
@@ -61,6 +84,7 @@ onMounted( async() => {
 })
 
 const handleMenu = (e) => {
+  user.menuPath = e
   defaultActive.value= e
   refRouter.value.scrollTop = 0
 }

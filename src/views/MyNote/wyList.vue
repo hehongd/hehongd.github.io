@@ -57,7 +57,7 @@
 <script setup name="WyList">
 import { DocumentCopy } from '@element-plus/icons-vue'
 import { ref } from 'vue'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 
 const user = useUserStore()
 

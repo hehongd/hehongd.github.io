@@ -8,36 +8,19 @@
                 </el-menu>
             </el-col>
             <el-col :span="12" class="right-menu">
-                <el-image :src="imgUrl" fit="fill" @click="handleImage('full')" />
+                <full-screens></full-screens>
             </el-col>
         </el-row>
     </el-header>
 </template>
 <script setup>
-    import { onMounted, ref, watch } from "vue";
-    import { signOut,exitFullscreen } from "@/utils"
-    import { useUserStore } from "@/store/user"
-    import fullScreen from "@/assets/images/full-screen.png"
-    import exitFull from "@/assets/images/exit-full-screen.png"
+    import { ref } from "vue";
+    import { useUserStore } from "@/store/modules/user"
+    import fullScreens from "./fullScreen.vue"
 
     const activeIndex = ref('1')
-    const imgUrl =  ref(fullScreen)
     const user = useUserStore()
-    const flag = ref(true)
-    const handleImage = () => {
-        if( flag.value ) {
-            signOut()
-            imgUrl.value = fullScreen
-            flag.value = false
-        } else {
-            exitFullscreen()
-            imgUrl.value = exitFull
-            flag.value = true
-        }
-    }
-    const menuSelect = (e) => {
-        user.show = e
-    }
+    const menuSelect = (e) => { user.show = e }
 
 </script>
 <style lang="scss" scoped>

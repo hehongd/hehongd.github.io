@@ -1,6 +1,6 @@
 import useClipboard from 'vue-clipboard3'
 import { ElMessage } from 'element-plus'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 import store from '../store'
 
 //粘贴板方法

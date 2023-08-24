@@ -45,6 +45,21 @@ const routes = [
     path:'/bulletinBoard',
     name:'BulletinBoard',
     component:()=> import('@/views/echarts/bulletinBoard')
+  },
+  {
+    path:'/monitor',
+    name:'Monitor',
+    component:()=> import('@/views/echarts/monitor')
+  },
+  {
+    path:'/datamonitor',
+    name:'Datamonitor',
+    component:()=> import('@/views/echarts/datamonitor')
+  },
+  {
+    path:'/homepage',
+    name:'Homepage',
+    component:()=> import('@/views/dashboard/homepage')
   }
 ]
 

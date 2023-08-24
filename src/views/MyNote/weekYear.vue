@@ -88,7 +88,7 @@
 <script setup name="WeekYear">
 import { DocumentCopy } from '@element-plus/icons-vue'
 import { onMounted, ref } from 'vue'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 
 const user = useUserStore()
 

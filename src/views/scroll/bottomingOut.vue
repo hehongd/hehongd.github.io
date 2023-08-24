@@ -79,7 +79,7 @@
 <script setup name="BottomingOut">
 import { ref, watch,onMounted } from 'vue'
 import { DocumentCopy } from '@element-plus/icons-vue'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 
 const user = useUserStore()
 

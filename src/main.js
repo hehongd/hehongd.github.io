@@ -15,6 +15,7 @@ import elementIcons from '@/components/SvgIcon/svgicon'
 import "./assets/style/echarts/ui.scss";
 
 import { copy,goTop } from "@/utils/helpers.js"
+import 'default-passive-events'
 
 
 

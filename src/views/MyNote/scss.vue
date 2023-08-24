@@ -172,7 +172,7 @@
 import { DocumentCopy } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import { copy,goTop } from "@/utils/helpers.js"
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 
 const user = useUserStore()
 

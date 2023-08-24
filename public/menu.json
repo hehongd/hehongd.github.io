@@ -60,8 +60,16 @@
         "icon": "Location"
         },
         {
-            "title":"综合看板",
+            "title":"综合看板空模板demo",
             "path":"/bulletinBoard"
+        },
+        {
+            "title":"综合看板1",
+            "path":"/monitor"
+        },
+        {
+            "title":"综合看板2",
+            "path":"/datamonitor"
         }
     ]
     },
@@ -73,6 +81,17 @@
             { 
                 "title":"滚动触底",
                 "path":"/bottomingOut"
+            }
+        ]
+    },
+    {
+        "title":"页面memo制作",
+        "path":"6",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"后台首页",
+                "path":"/homepage"
             }
         ]
     }

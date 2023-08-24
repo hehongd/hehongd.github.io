@@ -8,7 +8,7 @@
     import { ref, watch } from "vue"
     import MyNote from "../MyNote"
     import MyMessage from "./MyMessage.vue"
-    import { useUserStore } from "@/store/user"
+    import { useUserStore } from "@/store/modules/user"
     const isShow = ref('1')
     const user = useUserStore()
     watch(user,(newVal,oldVal) => {

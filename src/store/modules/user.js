@@ -6,7 +6,9 @@ export const useUserStore = defineStore('user', {
     defaultActive:'/mixin',
     bottomingOut:false,
     scrollTop:0,
-    routerScrollTop:0
+    routerScrollTop:0,
+    menuPath:'',
+    isNotice:true
   }),
   actions: {
     SetUserInfo(data) {

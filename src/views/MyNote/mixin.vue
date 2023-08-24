@@ -263,7 +263,7 @@
 import { DocumentCopy } from '@element-plus/icons-vue'
 import { ref, watch,onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
-import { useUserStore } from "@/store/user"
+import { useUserStore } from "@/store/modules/user"
 
 const user = useUserStore()
 
