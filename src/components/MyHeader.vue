@@ -24,6 +24,9 @@
 
 </script>
 <style lang="scss" scoped>
+.el-row {
+    margin: 0 !important;
+}
 .el-menu--horizontal {
     border-bottom:0;
 }

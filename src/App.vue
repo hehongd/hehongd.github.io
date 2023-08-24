@@ -53,7 +53,7 @@ watch(menuPath,(newVal,oldVal) => {
 <style lang="scss" scoped>
 .contanier {
   display: flex;
-  height: calc( 100vh - 78px);
+  height: calc( 100vh - 62px);
 }
 .echarts-contanier {
   // display: flex;

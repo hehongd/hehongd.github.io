@@ -100,7 +100,7 @@ watch(routerScrollTop, (newVal,oldVal) =>{
 
 </script>
 <style lang="scss" scoped>.contanier {
-  height: calc(100% - 53px);
+  height: calc(100% - 54px);
   display: flex;
   .menu-contanie {
     width: 100%;
