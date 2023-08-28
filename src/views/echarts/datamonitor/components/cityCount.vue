@@ -90,9 +90,7 @@ const getPieData = async () => {
               },
             },
             iconStyle: {
-              normal: {
-                borderColor: "#1990DA",
-              },
+                borderColor: "#1990DA"
             },
             top: 0,
             right: 5,
@@ -120,10 +118,8 @@ const getPieData = async () => {
             //轴线上的字
             axisLabel: {
               show: true,
-              textStyle: {
                 color: "#cecece",
                 fontSize: 12,
-              },
               rotate: 15,
             },
             data: xData,
@@ -136,11 +132,9 @@ const getPieData = async () => {
               },
               //轴线上的字
               axisLabel: {
-                textStyle: {
                   fontSize: 12,
                   color: "#cecece",
                 },
-              },
               axisLine: {
                 lineStyle: {
                   color: "#397cbc",

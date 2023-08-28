@@ -100,12 +100,10 @@ const initEcharts = (data) => {
           },
         },
         label: {
-          normal: {
             formatter: data[0].value + "万",
             textStyle: {
               fontSize: 18,
             },
-          },
         },
       },
     ],

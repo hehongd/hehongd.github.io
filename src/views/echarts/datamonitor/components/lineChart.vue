@@ -142,9 +142,7 @@ onBeforeUnmount(() => {
               },
             },
             iconStyle: {
-              normal: {
-                borderColor: "#1990DA",
-              },
+                borderColor: "#1990DA"
             },
             top: 0,
             right: 5,
@@ -181,10 +179,8 @@ onBeforeUnmount(() => {
             },
             axisLabel: {
               show: true,
-              textStyle: {
                 color: "#cecece",
                 fontSize: 12,
-              },
               rotate: 15,
             },
             data: data.value.map((item) => item.name),
@@ -196,10 +192,8 @@ onBeforeUnmount(() => {
                 show: false,
               },
               axisLabel: {
-                textStyle: {
                   fontSize: 12,
                   color: "#cecece",
-                },
               },
               axisLine: {
                 lineStyle: {
@@ -227,18 +221,14 @@ onBeforeUnmount(() => {
                 color: "#0F84CC",
               },
               lineStyle: {
-                normal: {
                   width: 2,
                   color: "#0F84CC", // 线条颜色
-                },
                 borderColor: "#f0f",
               },
               areaStyle: {
-                normal: {
                   color: "#0F84CC",
                   shadowColor: "rgba(53,142,215, 0.9)", //阴影颜色
-                  shadowBlur: 20,
-                },
+                  shadowBlur: 2
               },
             },
             {
@@ -253,18 +243,14 @@ onBeforeUnmount(() => {
                 color: "#05D9E4",
               },
               lineStyle: {
-                normal: {
                   width: 2,
                   color: "#05D9E4", // 线条颜色
-                },
                 borderColor: "#f0f",
               },
               areaStyle: {
-                normal: {
                   color: "#05D9E4",
                   shadowColor: "rgba(53,142,215, 0.9)", //阴影颜色
                   shadowBlur: 20,
-                },
               },
             },
           ],

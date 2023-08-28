@@ -123,9 +123,8 @@ const initEcharts = (data) => {
           },
         },
         iconStyle: {
-          normal: {
+
             borderColor: "#1990DA",
-          },
         },
         top: 0,
         right: 5,

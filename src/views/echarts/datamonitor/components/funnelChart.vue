@@ -94,26 +94,20 @@ const getPieData = async () => {
               width: "70%",
               height: "85%",
               label: {
-                normal: {
                   formatter: "{b}",
-                },
                 emphasis: {
                   position: "inside",
                 },
               },
               labelLine: {
-                normal: {
                   length: 10,
                   lineStyle: {
                     width: 1,
                     type: "solid",
                   },
-                },
               },
               itemStyle: {
-                normal: {
                   borderWidth: 0,
-                },
               },
               data: data.value,
             },

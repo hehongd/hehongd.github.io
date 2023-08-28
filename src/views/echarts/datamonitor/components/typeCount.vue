@@ -150,9 +150,7 @@ const getPieData = async () => {
             },
           },
           iconStyle: {
-            normal: {
               borderColor: "#1990DA",
-            },
           },
           top: 0,
           right: 5,
@@ -166,12 +164,9 @@ const getPieData = async () => {
             roseType: "radius",
             data: data.value,
             labelLine: {
-              normal: {
                 length: 0.000000001,
-              },
             },
             itemStyle: {
-              normal: {
                 color: function(params) {
                   return colorList[params.dataIndex % colorList.length];
                 },
@@ -179,7 +174,6 @@ const getPieData = async () => {
                   show: true,
                   formatter: "{d}%",
                 },
-              },
             },
           },
         ],
