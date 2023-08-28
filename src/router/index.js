@@ -60,6 +60,16 @@ const routes = [
     path:'/homepage',
     name:'Homepage',
     component:()=> import('@/views/dashboard/homepage')
+  },
+  {
+    path:'/csstricks',
+    name:'clock',
+    component:()=> import('@/views/css/clock')
+  },
+  {
+    path:'/surrounding',
+    name:'Surrounding',
+    component:()=> import('@/views/css/surrounding')
   }
 ]
 

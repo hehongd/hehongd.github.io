@@ -3,20 +3,20 @@
     <el-col :span="1.5">
       <el-radio-group v-model="isNotice" style="margin-bottom: 20px">
         <el-tooltip effect="dark" content="显示公告栏" placement="bottom-start">
-          <el-radio-button :label="true"><el-icon :size="size" :color="color"> <Bell/></el-icon></el-radio-button>
+          <el-radio-button :label="true"><el-icon> <Bell/></el-icon></el-radio-button>
         </el-tooltip>
         <el-tooltip effect="dark" content="隐藏公告栏" placement="bottom-start">
-          <el-radio-button :label="false"><el-icon :size="size" :color="color"> <MuteNotification/></el-icon></el-radio-button>
+          <el-radio-button :label="false"><el-icon> <MuteNotification/></el-icon></el-radio-button>
         </el-tooltip>
       </el-radio-group>
     </el-col>
     <el-col :span="1.5">
       <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
         <el-tooltip effect="dark" content="显示菜单栏" placement="bottom-start">
-          <el-radio-button :label="false"><el-icon :size="size" :color="color"> <DArrowRight/></el-icon></el-radio-button>
+          <el-radio-button :label="false"><el-icon> <DArrowRight/></el-icon></el-radio-button>
         </el-tooltip>
         <el-tooltip effect="dark" content="隐藏菜单栏" placement="bottom-start">
-          <el-radio-button :label="true"><el-icon :size="size" :color="color"> <DArrowLeft/></el-icon></el-radio-button>
+          <el-radio-button :label="true"><el-icon> <DArrowLeft/></el-icon></el-radio-button>
         </el-tooltip>
       </el-radio-group>
     </el-col>
