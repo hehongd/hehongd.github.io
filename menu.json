@@ -94,5 +94,21 @@
                 "path":"/homepage"
             }
         ]
+    },
+    {
+        "title":"CSS-tricks",
+        "path":"7",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"创建时钟",
+                "path":"/csstricks"
+            },
+            { 
+                "title":"创建圆形图像库",
+                "path":"/surrounding"
+            }
+        ]
     }
+
 ]
