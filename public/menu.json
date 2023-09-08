@@ -109,6 +109,17 @@
                 "path":"/surrounding"
             }
         ]
+    },
+    {
+        "title":"HTML标签",
+        "path":"8",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"label标签(复选框)",
+                "path":"/htmltag"
+            }
+        ]
     }
 
 ]

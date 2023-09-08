@@ -70,6 +70,11 @@ const routes = [
     path:'/surrounding',
     name:'Surrounding',
     component:()=> import('@/views/css/surrounding')
+  },
+  {
+    path:'/htmltag',
+    name:'HtmlTag',
+    component:()=> import('@/views/htmlTag')
   }
 ]
 
