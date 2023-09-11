@@ -2,10 +2,14 @@
     <div id="pie" ref="chartRef"></div>
 </template>
 <script setup>
-import { onMounted, reactive, ref, watch,markRaw } from "vue";
+import { onMounted, reactive, ref, watch,markRaw, nextTick, computed, onBeforeUnmount } from "vue";
+import { useUserStore } from "@/store/modules/user"
+
+const user = useUserStore()
 // 引入 echarts
 import * as echarts from "echarts";
 
+const { proxy }= getCurrentInstance()
 const myChart = ref(null)
 const chartRef = ref(null)
 const state = reactive({
@@ -60,6 +64,30 @@ const resizeFn = () => {
 onMounted(() => {
     getinitChart()
     window.addEventListener('resize',resizeFn)
+})
+
+
+const resetWidth = () => {
+    nextTick(() =>{
+        proxy.$erd.listenTo(chartRef.value,(ele) => {
+            // console.log('=======offsetWidth', ele.offsetWidth);
+            // console.log('=======offsetHeight', ele.offsetHeight);
+            // console.log('=======clientWidth', ele.clientWidth);
+            resizeFn()
+            // width.value =  ele.clientWidth
+        })
+    })
+}
+onBeforeUnmount(() => {
+    proxy.$erd.uninstall(chartRef.value);
+})
+const isCollapse = computed(() => user.isCollapse)
+watch(isCollapse,(newVal,oldVal) => {
+    resetWidth()
+})
+
+watch(() => user.isNotice,(newVal,oldVal) => {
+    resetWidth()
 })
 </script>
 <style lang="scss" scoped>

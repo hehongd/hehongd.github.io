@@ -112,7 +112,7 @@ const initEcharts = (data) => {
   myChart.value.getZr().off("click");
   // 点击图表事件
   myChart.value.getZr().on("click", (params) => {
-    console.log(params);
+    // console.log(params);
   });
 };
 

@@ -7,6 +7,8 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
 import './permissions'
+import ElementResizeDetectorMaker from "element-resize-detector";
+
 
 // svg图标
 import 'virtual:svg-icons-register'
@@ -25,6 +27,7 @@ const app = createApp(App)
 // 全局挂载方法
 app.config.globalProperties.copy = copy
 app.config.globalProperties.goTop = goTop
+app.config.globalProperties.$erd = ElementResizeDetectorMaker()
 
 
 app.use(router)

@@ -8,7 +8,8 @@ export const useUserStore = defineStore('user', {
     scrollTop:0,
     routerScrollTop:0,
     menuPath:'',
-    isNotice:true
+    isNotice:true,
+    isCollapse:false
   }),
   actions: {
     SetUserInfo(data) {

@@ -18,7 +18,6 @@ onBeforeUnmount(() => {
 });
 const resizeFn = debounce(() => {
     if(chartRef.value) {
-      console.log(myChart.value)
         myChart.value?.resize()
     }
 },200)
@@ -181,7 +180,6 @@ const getPieData = async () => {
     // 点击图表事件
     myChart.value.getZr().off("click");
     myChart.value.getZr().on("click", (params) => {
-      console.log(params)
       // const pointInPixel = [params.offsetX, params.offsetY];
       // if (myChart.containPixel("series", pointInPixel) || data.length === 0) {
       //   routerChange("/more");

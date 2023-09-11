@@ -1,4 +1,5 @@
 <template>
+  <div style="height: 100%;width: 100%;"> 
   <el-row :gutter="20">
     <el-col :span="1.5">
       <el-radio-group v-model="user.isNotice" style="margin-bottom: 20px">
@@ -11,7 +12,7 @@
       </el-radio-group>
     </el-col>
     <el-col :span="1.5">
-      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+      <el-radio-group v-model="user.isCollapse" style="margin-bottom: 20px">
         <el-tooltip effect="dark" content="显示菜单栏" placement="bottom-start">
           <el-radio-button :label="false"><el-icon> <DArrowRight/></el-icon></el-radio-button>
         </el-tooltip>
@@ -27,7 +28,7 @@
         router
         :default-active="defaultActive"
         class="el-menu-vertical-demo"
-        :collapse="isCollapse"
+        :collapse="user.isCollapse"
         @open="handleOpen"
         @close="handleClose"
         @select="handleMenu"
@@ -50,6 +51,7 @@
       <router-view />
     </div>
   </div>
+</div>
 </template>
 <script setup>
 import { ref, watch, onMounted,computed} from "vue";
@@ -69,6 +71,9 @@ const isNotice = ref(true)
 
 watch(isNotice,(newVal,oldVal) => {
   user.isNotice = newVal
+})
+watch(isCollapse,(newVal,oldVal) => {
+  user.isCollapse = newVal
 })
 
 const handleOpen = (key, keyPath) =>{console.log(key, keyPath)}

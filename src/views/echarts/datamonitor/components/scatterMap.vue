@@ -21,7 +21,6 @@ window.removeEventListener("resize", resizeFn);
 });
 const resizeFn = debounce(() => {
   if(chartRef.value) {
-    console.log(myChart.value)
       myChart.value?.resize()
   }
 },200)
@@ -38,7 +37,6 @@ const getPieData = async () => {
 //       yData.push(item.value);
 //     });
 let {data:res} = await getCinatMap()
-console.log(res)
   initEcharts([],res);
 };
     
@@ -193,7 +191,6 @@ const initEcharts = (data = [],mapJson) => {
   // 点击图表事件
   myChart.value.getZr().off("click");
   myChart.value.getZr().on("click", (params) => {
-    console.log(params)
     // const pointInPixel = [params.offsetX, params.offsetY];
     // if (myChart.containPixel("series", pointInPixel) || data.length === 0) {
     //   routerChange("/more");

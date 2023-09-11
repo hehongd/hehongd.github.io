@@ -46,7 +46,6 @@ onBeforeUnmount(() => {
   chart.value = null;
 });
 const resizeFn = debounce(() => {
-  console.log(chartRef.value);
   if (chartRef.value) {
     chart.value?.resize();
   }
