@@ -1,7 +1,7 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="1.5">
-      <el-radio-group v-model="isNotice" style="margin-bottom: 20px">
+      <el-radio-group v-model="user.isNotice" style="margin-bottom: 20px">
         <el-tooltip effect="dark" content="显示公告栏" placement="bottom-start">
           <el-radio-button :label="true"><el-icon> <Bell/></el-icon></el-radio-button>
         </el-tooltip>
