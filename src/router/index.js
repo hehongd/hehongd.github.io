@@ -72,6 +72,11 @@ const routes = [
     component:()=> import('@/views/css/surrounding')
   },
   {
+    path:'/rotation',
+    name:'Rotation',
+    component:()=> import('@/views/css/rotation')
+  },
+  {
     path:'/htmltag',
     name:'HtmlTag',
     component:()=> import('@/views/htmlTag')

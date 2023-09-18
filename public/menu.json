@@ -107,6 +107,10 @@
             { 
                 "title":"创建圆形图像库",
                 "path":"/surrounding"
+            },
+            { 
+                "title":"绕点旋转",
+                "path":"/rotation"
             }
         ]
     },
