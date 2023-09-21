@@ -124,6 +124,28 @@
                 "path":"/htmltag"
             }
         ]
+    },
+    {
+        "title":"下拉选择",
+        "path":"9",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"省市区",
+                "path":"/distpicker"
+            }
+        ]
+    },
+    {
+        "title":"外部链接",
+        "path":"10",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"实用的工具",
+                "path":"/externalLinks"
+            }
+        ]
     }
 
 ]
