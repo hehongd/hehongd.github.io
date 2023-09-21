@@ -1,5 +1,6 @@
 <template>
-    <el-scrollbar ref="conterRef" @mouseenter="mouseEnter" @mouseleave="mouseLeave">     
+    <el-scrollbar ref="conterRef">
+      <div id="container">    
     <div
       v-for="item in dynamicData"
       :key="item.name"
@@ -17,6 +18,8 @@
         </div>
       </div>
     </div>
+    </div>
+
 </el-scrollbar>
 </template>
 
@@ -60,37 +63,37 @@ const conterRef = ref(null);
 onMounted(() => {
     nextTick(() => {
         window.clearInterval(rolltimer.value)
-        autoRoll();
+        // autoRoll();
     })
 
 });
-// 设置自动滚动
-const autoRoll = (stop) => {
-  let scrollAreaRef = null
-  // 获取 DOM 元素
-  scrollAreaRef = conterRef.value.wrapRef
-  if (stop) {
-    window.clearInterval(rolltimer.value);
-  } else {
-    rolltimer.value = window.setInterval(() => {
-      scrollAreaRef.scrollTop += 1;
-      if (scrollAreaRef.clientHeight + scrollAreaRef.scrollTop + 5 == scrollAreaRef.scrollHeight) { //这里加5的原因是各种浏览器的精度可能不一致但误差小于5
-        scrollAreaRef.scrollTop = 0;
-      }
-    }, 30);
+// // 设置自动滚动
+// const autoRoll = (stop) => {
+//   let scrollAreaRef = null
+//   // 获取 DOM 元素
+//   scrollAreaRef = conterRef.value.wrapRef
+//   if (stop) {
+//     window.clearInterval(rolltimer.value);
+//   } else {
+//     rolltimer.value = window.setInterval(() => {
+//       scrollAreaRef.scrollTop += 1;
+//       if (scrollAreaRef.clientHeight + scrollAreaRef.scrollTop + 5 == scrollAreaRef.scrollHeight) { //这里加5的原因是各种浏览器的精度可能不一致但误差小于5
+//         scrollAreaRef.scrollTop = 0;
+//       }
+//     }, 30);
     
-  }
-};
-// 鼠标进入
-const mouseEnter = () => {
-  // 鼠标进入停止滚动和切换的定时任务
-  autoRoll(true);
-};
-// 鼠标离开
-const mouseLeave = () => {
-  // 开启
-  autoRoll();
-};
+//   }
+// };
+// // 鼠标进入
+// const mouseEnter = () => {
+//   // 鼠标进入停止滚动和切换的定时任务
+//   autoRoll(true);
+// };
+// // 鼠标离开
+// const mouseLeave = () => {
+//   // 开启
+//   autoRoll();
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -131,4 +134,16 @@ const mouseLeave = () => {
   }
 }
 -webkit-scrollbar{display:none}
+#container {
+  animation: move 10s linear infinite;
+}
+ 
+    @keyframes move {
+        0% {
+            transform: translateY(0%)
+        }
+        100% {
+            transform: translateY(-40%)
+        }
+    }
 </style>

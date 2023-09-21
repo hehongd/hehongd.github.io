@@ -80,6 +80,16 @@ const routes = [
     path:'/htmltag',
     name:'HtmlTag',
     component:()=> import('@/views/htmlTag')
+  },
+  {
+    path:'/distpicker',
+    name:'Distpicker',
+    component:() => import('@/views/select/distpicker')
+  },
+  {
+    path:'/externalLinks',
+    name:'ExternalLinks',
+    component:() => import('@/views/externalLinks')
   }
 ]
 
