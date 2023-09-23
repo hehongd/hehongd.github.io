@@ -146,6 +146,71 @@
                 "path":"/externalLinks"
             }
         ]
+    },
+    {
+        "title":"实例",
+        "path":"11",
+        "icon":"Histogram",
+        "children":[
+            { 
+                "title":"旋转木马",
+                "path":"/carousel"
+            },
+            { 
+                "title":"全屏加载动画效果",
+                "path":"/fullLcreenLoading"
+            },
+            { 
+                "title":"吃豆豆",
+                "path":"/pacman"
+            },
+            { 
+                "title":"鼠标悬停3D翻转",
+                "path":"/mousehover"
+            },
+            { 
+                "title":"flex弹性布局",
+                "path":"/list"
+            },
+            { 
+                "title":"grid网格布局",
+                "path":"/grid"
+            },
+            { 
+                "title":"grid网格布局使用",
+                "path":"12",
+                "children":[
+                    {
+                        "title":"grid-template-columns",
+                        "path":"/gridTemplateColumns"
+                    },
+                    {
+                        "title":"grid-template-rows",
+                        "path":"/gridTemplateRows"
+                    },
+                    {
+                        "title":"grid-template-areas",
+                        "path":"/gridTemplateAreas"
+                    },
+                    {
+                        "title":"grid-auto-flow",
+                        "path":"/gridAutoFlow"
+                    },
+                    {
+                        "title":"justify-align",
+                        "path":"/justifyAlign"
+                    },
+                    {
+                        "title":"grid-auto-xx",
+                        "path":"/gridAutoxx"
+                    }
+                ]
+            },
+            { 
+                "title":"左侧二级菜单",
+                "path":"/secondaryMenu"
+            }
+        ]
     }
 
 ]
