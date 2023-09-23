@@ -1,0 +1,114 @@
+<template>
+  <div class="scene">
+    <div class="box">
+        <div class="item --i:0">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:1">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:2">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:3">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:4">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:5">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:6">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:7">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+        <div class="item --i:8">
+            <img src="@/assets/images/monitor/seed9.jpg" alt="" width="200" height="200">
+        </div>
+    </div>
+</div>
+</template>
+
+<script setup>
+
+</script>
+
+<style lang="scss" scoped>
+			body{
+				margin: 0;
+				padding: 0;
+				background-color: #000;
+			}
+			.scene{
+				width: 600px;
+				height: 300px;
+				/* border: 2px solid red; */
+				margin: 150px auto 0;
+				/* 设置视距 */
+				perspective: 800px;
+			}
+			.scene .box{
+				width: 600px;
+				height: 300px;
+				/* background-color: yellow; */
+				/* 设置动画 */
+			    /* transition: all 1s ease; */
+				position: relative;
+				transform-style: preserve-3d;
+				animation: rotate 5s ease infinite;
+			}
+			/* .scene:hover .box{
+				transform: rotateY(-300deg);
+			} */
+			.scene .box .item{
+				width: 200px;
+				height: 200px;
+				background-color: skyblue;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -100px;
+				/* transform: rotateY(calc(var(--i) * 40deg)) translateZ(300px); */
+			}
+			.box .item:nth-child(1){
+				transform:  translateZ(300px);
+			}
+			.box .item:nth-child(2){
+				transform: rotateY(40deg) translateZ(300px);
+			}
+			.box .item:nth-child(3){
+				transform: rotateY(80deg) translateZ(300px);
+			}
+			.box .item:nth-child(4){
+				transform: rotateY(120deg) translateZ(300px);
+			}
+			.box .item:nth-child(5){
+				transform: rotateY(160deg) translateZ(300px);
+			}
+			.box .item:nth-child(6){
+				transform: rotateY(200deg) translateZ(300px);
+			}
+			.box .item:nth-child(7){
+				transform: rotateY(240deg) translateZ(300px);
+			}
+			.box .item:nth-child(8){
+				transform: rotateY(280deg) translateZ(300px);
+			}
+			.box .item:nth-child(9){
+				transform: rotateY(320deg) translateZ(300px);
+			}
+			.box:hover{
+				animation-play-state: paused;
+			}
+			@keyframes rotate {
+				0%{
+					transform: rotateX(-10deg) rotateY(0deg);
+				}
+				100%{
+					transform: rotateX(-10deg) rotateY(-360deg);
+				}
+			}
+		</style>

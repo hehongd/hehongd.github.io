@@ -90,7 +90,73 @@ const routes = [
     path:'/externalLinks',
     name:'ExternalLinks',
     component:() => import('@/views/externalLinks')
+  },
+  {
+    path:'/carousel',
+    name:'Carousel',
+    component:() => import('@/views/example/carousel')
+  },
+  {
+    path:'/fullLcreenLoading',
+    name:'FullLcreenLoading',
+    component:() => import('@/views/example/fullLcreenLoading')
+  },
+  {
+    path:'/pacman',
+    name:'Pacman',
+    component:() => import('@/views/example/pacman')
+  },
+  {
+    path:'/mousehover',
+    name:'Mousehover',
+    component:() => import('@/views/example/mousehover')
+  },
+  {
+    path:'/list',
+    name:'List',
+    component:() => import('@/views/example/list')
+  },
+  {
+    path:'/grid',
+    name:'Grid',
+    component:() => import('@/views/example/grid')
+  },
+  {
+    path:'/gridTemplateColumns',
+    name:'GridTemplateColumns',
+    component:() => import('@/views/example/grids/gridTemplateColumns.vue')
+  },
+  {
+    path:'/gridTemplateRows',
+    name:'GridTemplateRows',
+    component:() => import('@/views/example/grids/gridTemplateRows.vue')
+  },
+  {
+    path:'/gridTemplateAreas',
+    name:'GridTemplateAreas',
+    component:() => import('@/views/example/grids/gridTemplateAreas.vue')
+  },
+  {
+    path:'/gridAutoFlow',
+    name:'GridAutoFlow',
+    component:() => import('@/views/example/grids/gridAutoFlow.vue')
+  },
+  {
+    path:'/justifyAlign',
+    name:'JustifyAlign',
+    component:() => import('@/views/example/grids/justifyAlign.vue')
+  },
+  {
+    path:'/gridAutoxx',
+    name:'GridAutoxx',
+    component:() => import('@/views/example/grids/gridAutoxx.vue')
+  },
+  {
+    path:'/secondaryMenu',
+    name:'SecondaryMenu',
+    component:() => import('@/views/example/secondaryMenu')
   }
+  
 ]
 
 const router = createRouter({
