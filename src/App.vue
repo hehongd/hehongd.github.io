@@ -36,7 +36,7 @@ const menuPath = computed(() => user.menuPath);
 const isNotice = computed(() => user.isNotice);
 const istoggle = ref(true)
 
-const whiteList = [ '/bulletinBoard','/monitor','/datamonitor']
+const whiteList = [ '/echarts/bulletinBoard','/echarts/monitor','/echarts/datamonitor']
 
 
 watch(menuPath,(newVal,oldVal) => {

@@ -24,58 +24,15 @@
   </el-row>
   <div class="contanier">
     <div class="menu-contanier">
-      <el-menu
-        router
-        :default-active="defaultActive"
+        <el-menu
         class="el-menu-vertical-demo"
+        router 
+        :default-active="route.path" 
         :collapse="user.isCollapse"
-        @open="handleOpen"
-        @close="handleClose"
         @select="handleMenu"
-      >
-        <!-- <template  v-for="item in menuList" :key="item.path">
-          <el-sub-menu :index="item.path">
-            <template #title>
-              <el-icon><component :is="item.icon"/></el-icon>
-              <span>{{ item.title }}</span>
-            </template>
-            <el-menu-item-group v-for="n in item.children" :key="n.path">
-              <el-menu-item :index="n.path" v-if="item.children && item.children.length && !n.children">
-                {{ n.title }}
-              </el-menu-item>
-              <el-sub-menu  v-for="m in n.children" :key="m.path" :index="n.path">
-                <template #title v-if="n.children && n.children.length>0">{{ n.title }}</template>
-                <el-menu-item  v-for="m in n.children" :key="m.path" :index="m.path">{{ m.title }}</el-menu-item>
-              </el-sub-menu>
-            
-            </el-menu-item-group>
-          </el-sub-menu>
-        </template> -->
-        <template  v-for="item in menuList" :key="item.path">
-          <el-menu-item v-if="!item.children" :index="item.path">
-            <el-icon><HomeFilled /></el-icon>
-            <template #title>{{ item.title }}</template>
-          </el-menu-item>
-
-          <el-sub-menu v-if="item.children" :index="item.path">
-            <template #title>
-              <el-icon><Menu /></el-icon>
-              <span>{{ item.title }}</span>
-            </template>
-            <el-menu-item-group  v-for="menus in item.children"  :key="menus.path">
-              <el-menu-item v-if="!menus.children" :index="menus.path">
-                <template #title>{{ menus.title }}</template>
-              </el-menu-item>
-              <el-sub-menu  v-if="menus.children" >
-                <template #title>{{ menus.title }}</template>
-              <el-menu-item v-for="m in menus.children" :key="m.path" :index="m.path">
-                <template #title>{{ m.title }}</template>
-              </el-menu-item>
-            </el-sub-menu>
-            </el-menu-item-group>
-          </el-sub-menu>
-        </template>
-      </el-menu>
+        >
+            <menuItem v-for="item in menuList" :item="item" :key="item.path" />
+        </el-menu>
     </div>
     <div class="routerView" ref="refRouter" @scroll="addScroll">
       <router-view />
@@ -89,6 +46,12 @@ import {useRouter} from "vue-router"
 // import axios from 'axios'
 import { useUserStore } from "@/store/modules/user"
 import { getMenuInfo } from '@/api/menu.js'
+import menuItem from './menuItem.vue'
+import { useRoute } from "vue-router"
+import {getMenuData} from "@/utils/menu.js"
+
+const route = useRoute()
+
 
 
 const router = useRouter()
@@ -106,22 +69,20 @@ watch(isCollapse,(newVal,oldVal) => {
   user.isCollapse = newVal
 })
 
-const handleOpen = (key, keyPath) =>{console.log(key, keyPath)}
-const handleClose = (key, keyPath) =>{console.log(key, keyPath)}
 watch(() =>router.currentRoute.value.path,(newValue,oldValue)=> {
   defaultActive.value = newValue
 },{ immediate: true })
 onMounted( async() => {
+  // console.log(router,'8')
   // let {data:res} = await axios.get('src/JSON/menu.json')
-  let {data:res} = await getMenuInfo()
-  menuList.value = res
+  // let {data:res} = await getMenuInfo()
+  
+  menuList.value = getMenuData
   window.addEventListener('scroll',addScroll)
 })
 
 const handleMenu = (e) => {
-  console.log(e,888)
   user.menuPath = e
-  defaultActive.value= e
   refRouter.value.scrollTop = 0
 }
 const routerScrollTop = computed(() => user.routerScrollTop);
@@ -173,10 +134,6 @@ watch(routerScrollTop, (newVal,oldVal) =>{
 .el-menu-vertical-demo {
     background: #304156;
     height: 100%;
-}
-.el-menu-vertical-demo .el-menu-item.is-active {
-  background-color: rgba(0,0,0,0.5);
-  color: #38B2FF;
 }
 ::v-deep .el-sub-menu .el-menu {
     background: #304156;
