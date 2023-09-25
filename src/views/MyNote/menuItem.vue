@@ -8,6 +8,7 @@
                 </el-icon>
                 <span>{{ item.meta.title }}</span>
             </template>
+            <!-- 组件在它的模板内可以递归的调用自己，只要给组件设置 name 组件就可以了 -->
             <menuItem v-for="child in item.children" :item="child" :key="child.path" />
         </el-sub-menu>
         <el-menu-item v-else :index="item.path">
