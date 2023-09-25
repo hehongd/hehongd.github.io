@@ -106,6 +106,9 @@ watch(routerScrollTop, (newVal,oldVal) =>{
     overflow-y: auto;
     overflow-x: hidden;
     width: 300px;
+    ::v-deep .el-sub-menu {
+      background: #304156;
+    }
     &::-webkit-scrollbar {  
         width: 4px;  
         height: 4px;  
