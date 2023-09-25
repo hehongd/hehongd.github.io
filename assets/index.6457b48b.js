@@ -1,1 +1,0 @@
-import{_,b as c,k as t,p as o,q as d,e as s}from"./index.6e035b92.js";const n={},a=e=>(o("data-v-7ef420ab"),e=e(),d(),e),p={class:"eat-peas"},i=a(()=>s("div",{class:"head"},[s("div",{class:"eye"})],-1)),l=a(()=>s("div",{class:"peas"},null,-1)),r=[i,l];function f(e,h){return t(),c("div",p,r)}const u=_(n,[["render",f],["__scopeId","data-v-7ef420ab"]]);export{u as default};
