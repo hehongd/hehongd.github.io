@@ -11,6 +11,7 @@ import ElementResizeDetectorMaker from "element-resize-detector";
 // import VDistpicker from 'v-distpicker'
 
 
+
 // svg图标
 import 'virtual:svg-icons-register'
 import SvgIcon from '@/components/SvgIcon'
@@ -30,9 +31,10 @@ app.config.globalProperties.copy = copy
 app.config.globalProperties.goTop = goTop
 app.config.globalProperties.$erd = ElementResizeDetectorMaker()
 
+
+
 // 注册全局组件
 // app.component('v-distpicker', VDistpicker)
-
 
 app.use(router)
 app.use(elementIcons)

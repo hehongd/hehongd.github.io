@@ -186,7 +186,7 @@ export const getMenuData = [
         path: "/html",
         name: 'Html',
         meta: {
-            title: "HTML标签"
+            title: "HTML"
         },
         children: [
             {
@@ -195,6 +195,14 @@ export const getMenuData = [
                 component:()=> import('@/views/html/htmlTag'),
                 meta: {
                     title: "label标签(复选框)"
+                }
+            },
+            {
+                path:'/html/height',
+                name:'Height',
+                component:()=> import('@/views/html/height'),
+                meta: {
+                    title: "页面高度100%"
                 }
             }
         ]
@@ -360,6 +368,23 @@ export const getMenuData = [
                 component:() => import('@/views/menu/secondaryMenu'),
                 meta: {
                     title: "左侧二级菜单"
+                }
+            }
+        ]
+    },
+    {
+        path: "/pluginunit",
+        name: 'Pluginunit',
+        meta: {
+            title: "插件的使用"
+        },
+        children: [
+            {
+                path: "/pluginunit/dayjs",
+                name: "Dayjs",
+                component: ()=> import('@/views/pluginunit/dayjs'),
+                meta: {
+                    title: "Dayjs时间"
                 }
             }
         ]
