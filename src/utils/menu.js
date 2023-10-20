@@ -221,6 +221,14 @@ export const getMenuData = [
                 meta: {
                     title: "省市区"
                 }
+            },
+            {
+                path:'/select/radioCheckbox',
+                name:'RadioCheckbox',
+                component:() => import('@/views/select/radioCheckbox'),
+                meta: {
+                    title: "纯CSS美化单选/复选框"
+                }
             }
         ]
     },
