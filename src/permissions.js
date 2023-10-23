@@ -35,7 +35,7 @@ function filterAsyncRouter(asyncRouterMap) {
     
     user.menuPath = to.path
     if( to.path == '/') {
-        next({path:'/mixin',replace:true})
+        next({path:'/vue3/mixin',replace:true})
     } else{
         next()
     }
