@@ -397,5 +397,21 @@ export const getMenuData = [
             }
         ]
     },
-
+    {
+        path: "/recursion",
+        name: 'Recursion',
+        meta: {
+            title: "递归"
+        },
+        children: [
+            {
+                path: "/recursion/tree",
+                name: "Tree",
+                component: ()=> import('@/views/recursion/tree'),
+                meta: {
+                    title: "构造树型结构数据"
+                }
+            }
+        ]
+    }
 ]
