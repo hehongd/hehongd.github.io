@@ -306,7 +306,7 @@ export const getMenuData = [
             },
             {
                 path:'/example/grids',
-                name:'Grid',
+                name:'Grids',
                 meta: {
                     title: "gird网格布局使用"
                 },
@@ -361,6 +361,14 @@ export const getMenuData = [
                     },
                 ]
             },
+            {
+                path:'/example/gallerytrack',
+                name:'Gallerytrack',
+                component:() => import('@/views/example/gallerytrack'),
+                meta: {
+                    title: "gird网格布局例题"
+                }
+            },
         ]
     },
     {
@@ -410,6 +418,23 @@ export const getMenuData = [
                 component: ()=> import('@/views/recursion/tree'),
                 meta: {
                     title: "构造树型结构数据"
+                }
+            }
+        ]
+    },
+    {
+        path: "/scenicspot",
+        name: 'Scenicspot',
+        meta: {
+            title: "景点图片"
+        },
+        children: [
+            {
+                path: "/scenicspot/Pictures",
+                name: "Tree",
+                component: ()=> import('@/views/scenicspot/Pictures'),
+                meta: {
+                    title: "图片"
                 }
             }
         ]
