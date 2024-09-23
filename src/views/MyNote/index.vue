@@ -23,7 +23,7 @@
     </el-col>
   </el-row>
   <div class="contanier">
-    <div class="menu-contanier">
+    <div class="menu-contanier" :style="{width:user.isCollapse?'64px':'200px'}">
         <el-menu
         class="el-menu-vertical-demo"
         router 
@@ -105,7 +105,7 @@ watch(routerScrollTop, (newVal,oldVal) =>{
   .menu-contanier {
     overflow-y: auto;
     overflow-x: hidden;
-    width: 300px;
+    // width: 300px;
     ::v-deep .el-sub-menu {
       background: #304156;
     }

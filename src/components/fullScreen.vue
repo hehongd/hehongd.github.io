@@ -13,11 +13,11 @@
     const handleImage = () => {
         if( flag.value ) {
             signOut()
-            imgUrl.value = fullScreen
+            imgUrl.value = exitFull
             flag.value = false
         } else {
             exitFullscreen()
-            imgUrl.value = exitFull
+            imgUrl.value = fullScreen
             flag.value = true
         }
     }
